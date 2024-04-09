@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="test" Text="{DynamicResource m_Title}"/>
+        <Button x:Name="button" Content="button" Width="100px" Height="100px" Click="button_Click" />
     </Grid>
 </Window>
