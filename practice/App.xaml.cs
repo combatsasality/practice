@@ -6,12 +6,17 @@ using System.Linq;
 using System.Windows;
 using System.Collections.Generic;
 using practice.Properties;
+using practice.Utils;
+using System.Text.Json;
+using System.IO;
+using practice.Utils.DataStructures;
 
 
 namespace practice
 {
     public partial class App : Application
     {
+        public static DataWrapper Data;
         private static List<CultureInfo> _availableLanguages = new List<CultureInfo>();
         public static ReadOnlyCollection<CultureInfo> availableLanguages
         {
@@ -20,6 +25,7 @@ namespace practice
                 return _availableLanguages.AsReadOnly();
             }
         }
+
         public App()
         {
             InitializeComponent();
@@ -29,6 +35,18 @@ namespace practice
             _availableLanguages.Add(new CultureInfo("uk-UA"));
 
             Language = Settings.Default.Language;
+            HelpHandler.CreateAllStuff();
+            Data = JsonSerializer.Deserialize<DataWrapper>(File.ReadAllText(HelpHandler.PathData));
+            Data.Documents.Add(new Document(@"E:\download\Telegram Desktop\image_2024-04-09_14-31-40.png", Data.Users[0].Id, new List<Guid>() { Data.Users[1].Id, Data.Users[2].Id }));
+
+            //Response resp = Data.Register("admin", "admin", "admin@admin.com");
+            //if (!resp.status)
+            //{
+            //    MessageBox.Show(resp.message);
+            //}
+            //Data.Register("JohnDoe", "john", "johndoe@gmail.com");
+            //Data.Register("Valera", "valera", "m3sckt@gmail.com");
+            //Data.Register("Onervi", "admin", "onervi@combatsasality.com");
         }
         public static event EventHandler LanguageChanged;
         public static CultureInfo Language
@@ -69,6 +87,16 @@ namespace practice
         {
             Settings.Default.Language = Language;
             Settings.Default.Save();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            Exit += App_Exit;
+        }
+        private void App_Exit(object sender, ExitEventArgs e)
+        {
+            Data.Save();
         }
     }
 }

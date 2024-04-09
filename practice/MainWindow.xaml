@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="test" Text="{DynamicResource m_Title}"/>
         <Menu DockPanel.Dock="Top">
             <MenuItem x:Name="menuLanguage" Header="{DynamicResource menuLanguage_Title}" />
         </Menu>
+        <Label x:Name="testLabel" Content="test" Margin="20,20,20,20" />
     </Grid>
 </Window>
