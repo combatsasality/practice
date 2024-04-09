@@ -22,12 +22,15 @@ namespace practice
         }
         public App()
         {
+            InitializeComponent();
+            App.LanguageChanged += App_LanguageChanged;
             _availableLanguages.Clear();
             _availableLanguages.Add(new CultureInfo("en-US"));
             _availableLanguages.Add(new CultureInfo("uk-UA"));
 
-            //Language = Settings.Default.Language;
+            Language = Settings.Default.Language;
         }
+        public static event EventHandler LanguageChanged;
         public static CultureInfo Language
         {
             get
@@ -36,15 +39,14 @@ namespace practice
             }
             set
             {
-                if (value==null) throw new ArgumentNullException("value");
-                if (value.Equals(System.Threading.Thread.CurrentThread.CurrentUICulture)) return;
+                if (value == null) throw new ArgumentNullException("value");
+                if (value == System.Threading.Thread.CurrentThread.CurrentUICulture) return;
 
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
-                System.Threading.Thread.CurrentThread.CurrentCulture = value;
 
                 ResourceDictionary dict = new ResourceDictionary();
                 dict.Source = new Uri(String.Format("Resources/lang/{0}.xaml", value.Name), UriKind.Relative);
-                //Application.Current.Resources.MergedDictionaries.Add(dict);
+
                 ResourceDictionary oldDict = (
                     from d in Application.Current.Resources.MergedDictionaries
                     where d.Source != null && d.Source.OriginalString.StartsWith("Resources/lang/")
@@ -59,9 +61,14 @@ namespace practice
                 {
                     Application.Current.Resources.MergedDictionaries.Add(dict);
                 }
-                Settings.Default.Language = value;
-                Settings.Default.Save();
+                LanguageChanged(Application.Current, new EventArgs());
             }
+        }
+
+        private void App_LanguageChanged(Object sender, EventArgs e)
+        {
+            Settings.Default.Language = Language;
+            Settings.Default.Save();
         }
     }
 }

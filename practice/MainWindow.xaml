@@ -8,6 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="test" Text="{DynamicResource m_Title}"/>
-        <Button x:Name="button" Content="button" Width="100px" Height="100px" Click="button_Click" />
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="menuLanguage" Header="{DynamicResource menuLanguage_Title}" />
+        </Menu>
     </Grid>
 </Window>

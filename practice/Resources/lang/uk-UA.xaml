@@ -2,4 +2,5 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
     <v:String x:Key="m_Title">Впф локал example</v:String>
+    <v:String x:Key="menuLanguage_Title">Оберіть мову</v:String>
 </ResourceDictionary>
