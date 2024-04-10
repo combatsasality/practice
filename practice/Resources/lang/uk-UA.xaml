@@ -11,8 +11,16 @@
     <v:String x:Key="login_button_text">Авторизуватися</v:String>
     <v:String x:Key="login_no_account_0">Не маєте облікового запису?</v:String>
     <v:String x:Key="login_no_account_1">Зареєструватися</v:String>
+    <v:String x:Key="login_error_password">Невірно введений логін або пароль</v:String>
     <v:String x:Key="register_error_password_short">Логін або пароль занадто короткий</v:String>
     <v:String x:Key="register_error_user_exists">Користувач з таким логіном вже існує</v:String>
     <v:String x:Key="register_error_email">Некоректний email</v:String>
-    <v:String x:Key="login_error_password">Невірно введений логін або пароль</v:String>
+    <v:String x:Key="register_error_password_not_match">Паролі повинні бути однакові</v:String>
+    <v:String x:Key="register_header">Реєстрація</v:String>
+    <v:String x:Key="register_email">Електронна пошта</v:String>
+    <v:String x:Key="register_confirm_password">Підтвердіть пароль</v:String>
+    <v:String x:Key="register_have_account_0">Вже маєте обліковий запис?</v:String>
+    <v:String x:Key="register_have_account_1">Увійдіть в систему</v:String>
+    <v:String x:Key="register_button_text">Зареєструватися</v:String>
+    <v:String x:Key="register_success">Користувач успішно зареєстрований</v:String>
 </ResourceDictionary>

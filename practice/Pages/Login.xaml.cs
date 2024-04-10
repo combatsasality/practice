@@ -2,6 +2,7 @@
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace practice.Pages
 {
@@ -18,6 +19,7 @@ namespace practice.Pages
             if (!resp.status)
             {
                 status.Visibility = Visibility.Visible;
+                status.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cf1322"));
                 status.SetResourceReference(Label.ContentProperty, resp.message);
                 return;
             }

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:practice"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Login" Height="505" Width="404"
+        Title="СУЕД" 
+        Height="505" Width="404"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
     <ui:SimpleStackPanel>
