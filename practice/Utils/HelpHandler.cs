@@ -1,9 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.Globalization;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Unicode;
+using System.Windows;
+using System.Linq;
+
 
 namespace practice.Utils
 {
@@ -42,6 +47,28 @@ namespace practice.Utils
                 sOutput.Append(arrInput[i].ToString("X2"));
             }
             return sOutput.ToString();
+        }
+
+        public static void ChangeMergedDictionaries(string pattern, string newSource)
+        {
+
+            ResourceDictionary dict = new ResourceDictionary();
+            dict.Source = new Uri(newSource, UriKind.Relative);
+
+            ResourceDictionary oldDict = (
+                from d in Application.Current.Resources.MergedDictionaries
+                where d.Source != null && d.Source.OriginalString.StartsWith(pattern)
+                select d).FirstOrDefault();
+            if (oldDict != null)
+            {
+                int index = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
+                Application.Current.Resources.MergedDictionaries.Remove(oldDict);
+                Application.Current.Resources.MergedDictionaries.Insert(index, dict);
+            }
+            else
+            {
+                Application.Current.Resources.MergedDictionaries.Add(dict);
+            }
         }
 
     }
