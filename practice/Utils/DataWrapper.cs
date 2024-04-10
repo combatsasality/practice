@@ -24,23 +24,36 @@ namespace practice.Utils
         {
             if (username.Length < 4 || password.Length < 4)
             {
-                return new Response("Логін або пароль занадто короткий", false);
+                return new Response("register_error_password_short", false);
             }
             User user = Users.FirstOrDefault(u => u.Username == username);
             if (!user.Equals(default(User)))
             {
-                return new Response("Користувач з таким логіном вже існує", false);
+                return new Response("register_error_user_exists", false);
             }
             if (!(new Regex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$").IsMatch(email)))
             {
-                return new Response("Некоректний email", false);
+                return new Response("register_error_email", false);
             }
             RSA rsa = RSA.Create();
             rsa.ExportParameters(true);
             User newUser = new User(username, HelpHandler.GetHashFromString(password), email, rsa.ToXmlString(true));
             Users.Add(newUser);
             PublicKeys.Add(new PublicKeys(newUser.Id, rsa.ToXmlString(false)));
-            return new Response("Користувач успішно зареєстрований", true);
+            return new Response("-", true);
+        }
+        public Response Login(string username, string password)
+        {
+            User user = Users.Find(u => u.Username == username);
+            if (user.Equals(default(User)))
+            {
+                return new Response("login_error_password", false);
+            }
+            if (user.Password != HelpHandler.GetHashFromString(password))
+            {
+                return new Response("login_error_password", false);
+            }
+            return new Response(true, user);
         }
     }
 
@@ -55,9 +68,8 @@ namespace practice.Utils
             this.message = message;
             this.status = status;
         }
-        public Response(string message, bool status, User user)
+        public Response(bool status, User user)
         {
-            this.message = message;
             this.status = status;
             this.user = user;
         }

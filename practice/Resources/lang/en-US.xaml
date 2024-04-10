@@ -5,4 +5,14 @@
     <v:String x:Key="text_menu_theme">Select a theme</v:String>
     <v:String x:Key="text_menu_theme_dark">Dark</v:String>
     <v:String x:Key="text_menu_theme_light">Light</v:String>
+    <v:String x:Key="login_header">Sign in</v:String>
+    <v:String x:Key="login_username">Username</v:String>
+    <v:String x:Key="login_password">Password</v:String>
+    <v:String x:Key="login_button_text">Login</v:String>
+    <v:String x:Key="login_no_account_0">Don't have an account?</v:String>
+    <v:String x:Key="login_no_account_1">Sign up</v:String>
+    <v:String x:Key="register_error_password_short">Login or password is too short</v:String>
+    <v:String x:Key="register_error_user_exists">A user with this login already exists</v:String>
+    <v:String x:Key="register_error_email">Invalid email</v:String>
+    <v:String x:Key="login_error_password">Login or password entered incorrectly</v:String>
 </ResourceDictionary>

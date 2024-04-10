@@ -1,18 +1,15 @@
-﻿<Window x:Class="practice.MainWindow"
+﻿<Window x:Class="practice.Authorization"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:practice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Title="Login" Height="505" Width="404"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
-    <Grid>
-        <Menu DockPanel.Dock="Top" >
-            <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
-            <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}" />
-        </Menu>
-    </Grid>
-
+    <ui:SimpleStackPanel>
+        <ui:Frame Name="MainFrame" />
+    </ui:SimpleStackPanel>
 </Window>

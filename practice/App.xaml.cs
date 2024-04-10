@@ -8,6 +8,7 @@ using practice.Utils;
 using System.Text.Json;
 using System.IO;
 using ModernWpf;
+using practice.Utils.DataStructures;
 
 
 namespace practice
@@ -15,15 +16,15 @@ namespace practice
     public partial class App : Application
     {
         public static DataWrapper Data;
+        public static User CurrentUser;
         private static List<CultureInfo> _availableLanguages = new List<CultureInfo>();
-        public static ReadOnlyCollection<CultureInfo> availableLanguages
+        public static ReadOnlyCollection<CultureInfo> AvailableLanguages
         {
             get
             {
                 return _availableLanguages.AsReadOnly();
             }
         }
-        // https://github.com/Kinnara/ModernWpf
         public App()
         {
             InitializeComponent();

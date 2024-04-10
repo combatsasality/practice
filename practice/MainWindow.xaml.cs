@@ -15,7 +15,7 @@ namespace practice
             InitializeComponent(); 
             CultureInfo currentLangauge = App.Language;
             menuLanguage.Items.Clear();
-            foreach (var lang in App.availableLanguages)
+            foreach (var lang in App.AvailableLanguages)
             {
                 MenuItem menuLang = new MenuItem();
                 menuLang.Header = lang.DisplayName;

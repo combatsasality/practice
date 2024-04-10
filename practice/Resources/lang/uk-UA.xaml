@@ -5,4 +5,14 @@
     <v:String x:Key="text_menu_theme">Оберіть тему</v:String>
     <v:String x:Key="text_menu_theme_dark">Темна</v:String>
     <v:String x:Key="text_menu_theme_light">Світла</v:String>
+    <v:String x:Key="login_header">Авторизація</v:String>
+    <v:String x:Key="login_username">Ім'я користувача</v:String>
+    <v:String x:Key="login_password">Пароль</v:String>
+    <v:String x:Key="login_button_text">Авторизуватися</v:String>
+    <v:String x:Key="login_no_account_0">Не маєте облікового запису?</v:String>
+    <v:String x:Key="login_no_account_1">Зареєструватися</v:String>
+    <v:String x:Key="register_error_password_short">Логін або пароль занадто короткий</v:String>
+    <v:String x:Key="register_error_user_exists">Користувач з таким логіном вже існує</v:String>
+    <v:String x:Key="register_error_email">Некоректний email</v:String>
+    <v:String x:Key="login_error_password">Невірно введений логін або пароль</v:String>
 </ResourceDictionary>
