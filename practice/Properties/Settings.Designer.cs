@@ -38,9 +38,9 @@ namespace practice.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Light")]
-        public string Theme {
+        public global::ModernWpf.ApplicationTheme Theme {
             get {
-                return ((string)(this["Theme"]));
+                return ((global::ModernWpf.ApplicationTheme)(this["Theme"]));
             }
             set {
                 this["Theme"] = value;

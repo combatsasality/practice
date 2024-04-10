@@ -5,18 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:practice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Style x:Key="Menu" TargetType="Menu">
-            <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="Background" Value="White" />
-        </Style>
-    </Window.Resources>
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
     <Grid>
-        <Menu DockPanel.Dock="Top" Style="{StaticResource Menu}" >
+        <Menu DockPanel.Dock="Top" >
             <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
             <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}"/>
         </Menu>
-        <TextBlock Text="{DynamicResource text_menu_theme_light}" Margin="10,20,10,10" />
     </Grid>
+
 </Window>
