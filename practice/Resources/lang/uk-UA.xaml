@@ -35,4 +35,8 @@
     <v:String x:Key="adddocument_select_document">Обрати документ</v:String>
     <v:String x:Key="adddocument_name_document">Назва документа</v:String>
     <v:String x:Key="adddocument_date_document">Виберіть до якого числа документ може бути підписаний</v:String>
+    <v:String x:Key="adddocument_add_button">Додати документ</v:String>
+    <v:String x:Key="adddocument_not_selected_user_document">Будь ласка, виберіть користувача, якому ви хочете додати документ.</v:String>
+    <v:String x:Key="adddocument_not_named_document">Будь ласка, введіть назву документа.</v:String>
+    <v:String x:Key="adddocument_invalid_selected_date_document">Дата не повинна бути меншою за сьогоднішній день.</v:String>
 </ResourceDictionary>

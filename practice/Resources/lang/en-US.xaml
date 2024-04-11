@@ -35,4 +35,8 @@
     <v:String x:Key="adddocument_select_document">Select a document</v:String>
     <v:String x:Key="adddocument_name_document">Document name</v:String>
     <v:String x:Key="adddocument_date_document">Select the date by which the document can be signed</v:String>
+    <v:String x:Key="adddocument_add_button">Add document</v:String>
+    <v:String x:Key="adddocument_not_selected_user_document">Please select a user to add the document to.</v:String>
+    <v:String x:Key="adddocument_not_named_document">Please enter a name for the document.</v:String>
+    <v:String x:Key="adddocument_invalid_selected_date_document">The date must not be less than today's date.</v:String>
 </ResourceDictionary>

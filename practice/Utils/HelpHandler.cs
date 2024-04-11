@@ -70,6 +70,18 @@ namespace practice.Utils
                 Application.Current.Resources.MergedDictionaries.Add(dict);
             }
         }
+        public static ResourceDictionary GetLanguageDictionary()
+        {
+            return (
+                from d in Application.Current.Resources.MergedDictionaries
+                where d.Source != null && d.Source.OriginalString.StartsWith("Resources/Lang/")
+                select d).FirstOrDefault();
+        }
+
+        public static void SaveFile(string path, string newName)
+        {
+            File.WriteAllBytes(@"data\documents\" + newName + Path.GetExtension(path), File.ReadAllBytes(path));
+        }
 
     }
 }

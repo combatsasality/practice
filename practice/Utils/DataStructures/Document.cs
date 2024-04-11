@@ -93,13 +93,13 @@ namespace practice.Utils.DataStructures
             }
         }
 
-        private DateTime _createdAt;
-        public DateTime CreatedAt
+        private DateTime? _createdAt;
+        public DateTime? CreatedAt
         {
             get { return _createdAt; }
             set
             {
-                if (_createdAt == DateTime.MinValue)
+                if (_createdAt == null)
                 {
                     _createdAt = value;
                 }
@@ -140,11 +140,11 @@ namespace practice.Utils.DataStructures
         private bool _isSigned;
         public bool IsSigned
         {
+            // TODO: when implement sign document functionality, add on update in sign document method
             get { return _isSigned; }
             set
             {
                 _isSigned = value;
-                OnUpdate();
             }
         }
 
@@ -166,16 +166,16 @@ namespace practice.Utils.DataStructures
             }
         }
 
-        private DateTime _signedBefore;
-        public DateTime SignedBefore
+        private DateTime? _signedBefore;
+        public DateTime? SignedBefore
         {
             get { return _signedBefore; }
             set
             {
-                if (_signedBefore == DateTime.MinValue)
+                if (_signedBefore == null)
                 {
                     _signedBefore = value;
-                } else if (_signedBefore != DateTime.MinValue)
+                } else if (_signedBefore != null)
                 {
                     _signedBefore = value;
                     OnUpdate();
@@ -183,7 +183,7 @@ namespace practice.Utils.DataStructures
             }
         }
 
-        public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign, string nameInSystem, DateTime signedBefore)
+        public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign, string nameInSystem, DateTime? signedBefore)
         {
             _id = Guid.NewGuid();
             _name = Path.GetFileNameWithoutExtension(pathToFile) + "_unique" + _id.ToString();

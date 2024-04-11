@@ -85,10 +85,7 @@ namespace practice.Pages
 
         private void ButtonChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            ResourceDictionary resources = (
-            from d in Application.Current.Resources.MergedDictionaries
-            where d.Source != null && d.Source.OriginalString.StartsWith("Resources/Lang/")
-            select d).FirstOrDefault();
+            ResourceDictionary resources = HelpHandler.GetLanguageDictionary();
             if (PasswordBox.Password != ConfirmPasswordBox.Password)
             {
                 MessageBox.Show((string)resources["register_error_password_not_match"], "Error", MessageBoxButton.OK, MessageBoxImage.Error);

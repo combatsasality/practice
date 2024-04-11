@@ -10,32 +10,33 @@
       xmlns:ui="http://schemas.modernwpf.com/2019"
       Unloaded="Page_Unloaded"
       >
-    <Grid Margin="10,0,0,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <!--<ColumnDefinition Width="*"/>-->
-        </Grid.ColumnDefinitions>
-        <Button x:Name="SelectDocumentButton" Content="{DynamicResource adddocument_select_document}" Click="SelectDocumentButton_Click" />
-        <ui:SimpleStackPanel Grid.Column="0" x:Name="FirstPanel" Visibility="Hidden">
-            <TextBox x:Name="DocumentNameTextBox" ui:ControlHelper.Header="{DynamicResource adddocument_name_document}" HorizontalAlignment="Left"/>
-            <DatePicker x:Name="DocumentDateDatePicker" Margin="0,10,0,0" ui:ControlHelper.Header="{DynamicResource adddocument_date_document}" />
-        </ui:SimpleStackPanel>
+    <Grid>
+        <Grid Margin="10,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="SelectDocumentButton" Content="{DynamicResource adddocument_select_document}" Click="SelectDocumentButton_Click" VerticalAlignment="Top" />
+            <ui:SimpleStackPanel Grid.Column="0" x:Name="FirstPanel" Visibility="Hidden">
+                <TextBox x:Name="DocumentNameTextBox" ui:ControlHelper.Header="{DynamicResource adddocument_name_document}" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="DocumentDateDatePicker" Margin="0,10,0,0" ui:ControlHelper.Header="{DynamicResource adddocument_date_document}" />
+            </ui:SimpleStackPanel>
 
-        <ui:SimpleStackPanel Grid.Column="1" x:Name="SecondPanel" Visibility="Visible">
-            <ListView x:Name="UserListView" SelectionMode="Multiple" ScrollViewer.VerticalScrollBarVisibility="Visible">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100" />
-                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
-                        <GridViewColumn Header="Last login" DisplayMemberBinding="{Binding LastLogin, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}" Width="190" />
-                        <GridViewColumn Header="Register at" DisplayMemberBinding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy}}" Width="110" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </ui:SimpleStackPanel>
+            <ui:SimpleStackPanel Grid.Column="1" x:Name="SecondPanel" Visibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="UserListView" SelectionMode="Multiple" Height="500">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100" />
+                                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
+                                <GridViewColumn Header="Last login" DisplayMemberBinding="{Binding LastLogin, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}" Width="190" />
+                                <GridViewColumn Header="Register at" DisplayMemberBinding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy}}" Width="110" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </ui:SimpleStackPanel>
+        </Grid>
+        <Button Click="AddDocumentButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="AddDocumentButton" Content="{DynamicResource adddocument_add_button}" Margin="0,0,0,40" Visibility="Hidden" />
     </Grid>
 </Page>

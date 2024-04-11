@@ -67,18 +67,18 @@ namespace practice.Utils.DataStructures
                 }
             }
         }
-        private DateTime _lastLogin;
+        private DateTime? _lastLogin;
 
-        public DateTime LastLogin { get
+        public DateTime? LastLogin { get
             {
                 return _lastLogin;
             } set
             {
-                if (_lastLogin == DateTime.MinValue)
+                if (_lastLogin == null)
                 {
                     _lastLogin = value;
                 }
-                else if (_lastLogin != DateTime.MinValue)
+                else if (_lastLogin != null)
                 {
                     _lastLogin = value;
                     OnUpdate();
@@ -86,14 +86,14 @@ namespace practice.Utils.DataStructures
             }
             }
 
-        private DateTime _createdAt;
-        public DateTime CreatedAt { get
+        private DateTime? _createdAt;
+        public DateTime? CreatedAt { get
             {
                 return _createdAt;
             }
             set
             {
-                if (_createdAt == DateTime.MinValue)
+                if (_createdAt == null)
                 {
                     _createdAt = value;
                 }
