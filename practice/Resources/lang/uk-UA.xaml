@@ -24,6 +24,12 @@
     <v:String x:Key="register_button_text">Зареєструватися</v:String>
     <v:String x:Key="register_success">Користувач успішно зареєстрований</v:String>
     <v:String x:Key="menu_header">Меню</v:String>
+    <v:String x:Key="menu_add_document">Додати документ</v:String>
     <v:String x:Key="menu_settings">Налаштування</v:String>
     <v:String x:Key="menu_logout">Вихід</v:String>
+    <v:String x:Key="settings_general_settings">Загальні налаштування</v:String>
+    <v:String x:Key="settings_account">Налаштування облікового запису</v:String>
+    <v:String x:Key="text_change_password">Зміна паролю</v:String>
+    <v:String x:Key="button_change_password">Змінити</v:String>
+    <v:String x:Key="password_succ_changed">Пароль успішно змінено</v:String>
 </ResourceDictionary>

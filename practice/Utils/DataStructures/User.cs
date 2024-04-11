@@ -28,14 +28,14 @@ namespace practice.Utils.DataStructures
         
         }
 
-        public Response UpdatePassword(string password)
+        public Response ChangePassword(string password)
         {
             if (password.Length < 4)
             {
                 return new Response("register_error_password_short", false);
             }
             Password = HelpHandler.GetHashFromString(password);
-            return new Response("-", true);
+            return new Response("password_succ_changed", true);
         }
     }
 }

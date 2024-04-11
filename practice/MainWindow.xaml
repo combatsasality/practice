@@ -10,7 +10,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
     <!--PaneDisplayMode="Auto"-->
-    <ui:NavigationView x:Name="Menu" PaneDisplayMode="Left" IsPaneOpen="False" IsBackButtonVisible="Collapsed" OpenPaneLength="155" SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
+    <ui:NavigationView x:Name="Menu" PaneDisplayMode="Left" IsPaneOpen="False" IsBackButtonVisible="Collapsed" OpenPaneLength="185" SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
         <ui:NavigationView.PaneTitle>
             <DynamicResource ResourceKey="menu_header" />
         </ui:NavigationView.PaneTitle>
@@ -18,7 +18,7 @@
             Title
         </ui:NavigationView.Header>
         <ui:NavigationView.MenuItems>
-            <ui:NavigationViewItem Content="Home" Tag="home" />
+            <ui:NavigationViewItem Content="{DynamicResource menu_add_document}" Tag="add_document" Icon="Add" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.Content>
             <!--<ui:Frame x:Name="contentFrame" Source="Pages/StartPage.xaml"/>-->

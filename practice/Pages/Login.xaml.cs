@@ -15,12 +15,12 @@ namespace practice.Pages
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Response resp = App.Data.Login(loginTextBox.Text, passwordTextBox.Password);
+            Response resp = App.Data.Login(LoginTextBox.Text, PasswordTextBox.Password);
             if (!resp.status)
             {
-                status.Visibility = Visibility.Visible;
-                status.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cf1322"));
-                status.SetResourceReference(Label.ContentProperty, resp.message);
+                Status.Visibility = Visibility.Visible;
+                Status.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cf1322"));
+                Status.SetResourceReference(Label.ContentProperty, resp.message);
                 return;
             }
 

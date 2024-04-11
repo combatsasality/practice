@@ -6,12 +6,30 @@
       xmlns:local="clr-namespace:practice.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="800"
-      Title="Settings">
+      Title="Settings"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      >
 
     <Grid>
-        <Menu DockPanel.Dock="Left"  >
-                <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
-                <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}" />
-        </Menu>
+        
+        <!--<Menu DockPanel.Dock="Left"  >
+            <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
+            <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}" />
+        </Menu>-->
+        <TabControl>
+            <TabItem Header="{DynamicResource settings_general_settings}">
+                <ui:SimpleStackPanel Margin="10,10,0,0">
+                    <ComboBox x:Name="ComboBoxLanguage" ui:ControlHelper.Header="{DynamicResource text_menu_language}" Width="190" />
+                    <ComboBox x:Name="ComboBoxTheme" ui:ControlHelper.Header="{DynamicResource text_menu_theme}" Width="190" Margin="0,10,0,0" />
+                </ui:SimpleStackPanel>
+            </TabItem>
+            <TabItem Header="{DynamicResource settings_account}">
+                <ui:SimpleStackPanel Margin="10,10,0,0">
+                    <PasswordBox x:Name="PasswordBox" ui:ControlHelper.Header="{DynamicResource text_change_password}" ui:ControlHelper.PlaceholderText="{DynamicResource login_password}" Width="190" HorizontalAlignment="Left" />
+                    <PasswordBox x:Name="ConfirmPasswordBox" ui:ControlHelper.PlaceholderText="{DynamicResource register_confirm_password}" Width="190" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                    <Button Click="ButtonChangePassword_Click" x:Name="ButtonChangePassword" Content="{DynamicResource button_change_password}" Width="190" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+                </ui:SimpleStackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

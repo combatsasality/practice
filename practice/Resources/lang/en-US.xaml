@@ -24,6 +24,12 @@
     <v:String x:Key="register_button_text">Sign up</v:String>
     <v:String x:Key="register_success">User is successfully registered</v:String>
     <v:String x:Key="menu_header">Menu</v:String>
+    <v:String x:Key="menu_add_document">Add document</v:String>
     <v:String x:Key="menu_settings">Settings</v:String>
     <v:String x:Key="menu_logout">Log out</v:String>
+    <v:String x:Key="settings_general_settings">General settings</v:String>
+    <v:String x:Key="settings_account">Account settings</v:String>
+    <v:String x:Key="text_change_password">Change password</v:String>
+    <v:String x:Key="button_change_password">Change</v:String>
+    <v:String x:Key="password_succ_changed">Password successfully changed</v:String>
 </ResourceDictionary>
