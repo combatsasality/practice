@@ -1,10 +1,7 @@
-﻿using System.Linq;
-using System;
-using System.Windows;
-using System.Globalization;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Collections.Generic;
-using ModernWpf;
+using practice.Pages;
+using practice.Utils.DataStructures;
 
 namespace practice
 {
@@ -13,54 +10,27 @@ namespace practice
         public MainWindow()
         {
             InitializeComponent(); 
-            CultureInfo currentLangauge = App.Language;
-            menuLanguage.Items.Clear();
-            foreach (var lang in App.AvailableLanguages)
-            {
-                MenuItem menuLang = new MenuItem();
-                menuLang.Header = lang.DisplayName;
-                menuLang.Tag = lang;
-                menuLang.IsChecked = lang.Equals(currentLangauge);
-                menuLang.Click += ChangeLanguageClick;
-                menuLanguage.Items.Add(menuLang);
-            }
-            menuTheme.Items.Clear();
-            List<ApplicationTheme> themes = new List<ApplicationTheme> { ApplicationTheme.Light, ApplicationTheme.Dark };
-            foreach (var theme in themes)
-            {
-                MenuItem menuThemeItem = new MenuItem();
-                menuThemeItem.SetResourceReference(MenuItem.HeaderProperty, string.Format("text_menu_theme_{0}", theme.ToString().ToLower()));
-                menuThemeItem.Tag = theme;
-                menuThemeItem.IsChecked = theme.Equals(App.Theme);
-                menuThemeItem.Click += ChangeThemeClick;
-                menuTheme.Items.Add(menuThemeItem);
-            }
+           
         }
 
 
-        private void ChangeLanguageClick(object sender, EventArgs e)
+        private void NavigationView_SelectionChanged(ModernWpf.Controls.NavigationView sender, ModernWpf.Controls.NavigationViewSelectionChangedEventArgs args)
         {
-            MenuItem languageMenu = sender as MenuItem;
-            if (languageMenu != null)
+            //ContentFrame.Navigate(new Settings());
+            //ContentFrame.Content = new TextBlock { Text = args.SelectedItemContainer.Tag.ToString() };
+            switch (args.SelectedItemContainer.Tag.ToString())
             {
-                if (languageMenu.Tag is CultureInfo lang)
-                {
-                    App.Language = lang;
-                }
+                case "settings":
+                    ContentFrame.Navigate(new Settings());
+                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_settings");
+                    break;
+                case "logout":
+                    Authorization authorization = new Authorization();
+                    authorization.Show();
+                    App.CurrentUser = default;
+                    Close();
+                    break;
             }
         }
-        private void ChangeThemeClick(object sender, EventArgs e)
-        {
-            MenuItem themeMenu = sender as MenuItem;
-            if (themeMenu != null)
-            {
-                if (themeMenu.Tag is ApplicationTheme theme)
-                {
-                    App.Theme = theme;
-                }
-            }
-        }
-
-
     }
 }

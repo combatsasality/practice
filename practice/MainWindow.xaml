@@ -5,14 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:practice"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Title="СУЕД" Height="450" Width="800"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
-    <Grid>
-        <Menu DockPanel.Dock="Top" >
-            <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
-            <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}" />
-        </Menu>
-    </Grid>
+    <!--PaneDisplayMode="Auto"-->
+    <ui:NavigationView x:Name="Menu" PaneDisplayMode="Left" IsPaneOpen="False" IsBackButtonVisible="Collapsed" OpenPaneLength="155" SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
+        <ui:NavigationView.PaneTitle>
+            <DynamicResource ResourceKey="menu_header" />
+        </ui:NavigationView.PaneTitle>
+        <ui:NavigationView.Header x:Uid="NavigationHeader">
+            Title
+        </ui:NavigationView.Header>
+        <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem Content="Home" Tag="home" />
+        </ui:NavigationView.MenuItems>
+        <ui:NavigationView.Content>
+            <!--<ui:Frame x:Name="contentFrame" Source="Pages/StartPage.xaml"/>-->
+            <ui:Frame x:Name="ContentFrame"/>
+        </ui:NavigationView.Content>
+        <ui:NavigationView.FooterMenuItems>
+            <ui:NavigationViewItem Content="{DynamicResource menu_settings}" Tag="settings" Icon="Setting" />
+            <ui:NavigationViewItem Content="{DynamicResource menu_logout}" Tag="logout" Icon="Back" />
+        </ui:NavigationView.FooterMenuItems>
+    </ui:NavigationView>
 
 </Window>

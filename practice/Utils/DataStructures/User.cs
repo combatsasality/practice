@@ -25,6 +25,17 @@ namespace practice.Utils.DataStructures
             PrivateKey = privateKey;
             LastLogin = DateTime.Now;
             CreatedAt = DateTime.Now;
+        
+        }
+
+        public Response UpdatePassword(string password)
+        {
+            if (password.Length < 4)
+            {
+                return new Response("register_error_password_short", false);
+            }
+            Password = HelpHandler.GetHashFromString(password);
+            return new Response("-", true);
         }
     }
 }

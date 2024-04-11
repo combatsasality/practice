@@ -53,6 +53,7 @@ namespace practice.Utils
             {
                 return new Response("login_error_password", false);
             }
+            user.LastLogin = DateTime.Now;
             return new Response(true, user);
         }
     }

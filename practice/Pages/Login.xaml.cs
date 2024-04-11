@@ -27,7 +27,7 @@ namespace practice.Pages
             App.CurrentUser = resp.user;
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Authorization parentWindow = (Authorization)Window.GetWindow(this);
+            Window parentWindow = Window.GetWindow(this);
             parentWindow.Close();
         }
 

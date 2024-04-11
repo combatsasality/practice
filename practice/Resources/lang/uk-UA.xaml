@@ -23,4 +23,7 @@
     <v:String x:Key="register_have_account_1">Увійдіть в систему</v:String>
     <v:String x:Key="register_button_text">Зареєструватися</v:String>
     <v:String x:Key="register_success">Користувач успішно зареєстрований</v:String>
+    <v:String x:Key="menu_header">Меню</v:String>
+    <v:String x:Key="menu_settings">Налаштування</v:String>
+    <v:String x:Key="menu_logout">Вихід</v:String>
 </ResourceDictionary>
