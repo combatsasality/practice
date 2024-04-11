@@ -32,4 +32,7 @@
     <v:String x:Key="text_change_password">Change password</v:String>
     <v:String x:Key="button_change_password">Change</v:String>
     <v:String x:Key="password_succ_changed">Password successfully changed</v:String>
+    <v:String x:Key="adddocument_select_document">Select a document</v:String>
+    <v:String x:Key="adddocument_name_document">Document name</v:String>
+    <v:String x:Key="adddocument_date_document">Select the date by which the document can be signed</v:String>
 </ResourceDictionary>

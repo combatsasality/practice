@@ -7,27 +7,202 @@ namespace practice.Utils.DataStructures
 {
     public struct Document
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string OriginalName { get; set;}
-        public string Extension { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public string Hash { get; set; }
-        public Guid OwnerUuid { get; set; }
-        public bool IsSigned { get; set; }
-        public List<Guid> WhoCanSign { get; set; }
-        public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign)
-        {
-            OwnerUuid = ownerUuid;
-            WhoCanSign = whoCanSign;
-            Id = Guid.NewGuid();
-            Name = Path.GetFileNameWithoutExtension(pathToFile) + "_unique" + Id.ToString();
-            OriginalName = Path.GetFileNameWithoutExtension(pathToFile);
-            Extension = Path.GetExtension(pathToFile);
-            CreatedAt = DateTime.Now;
-            Hash = Convert.ToBase64String(SHA256.Create().ComputeHash(File.ReadAllBytes(pathToFile)));
-            IsSigned = false;
+        private Guid _id;
 
+        public Guid Id
+        {
+            get { return _id; }
+            set
+            {
+                if (_id == Guid.Empty)
+                {
+                    _id = value;
+                }
+            }
+        }
+
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (_name == null)
+                {
+                    _name = value;
+                }
+                else if (_name != null)
+                {
+                    _name = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private string _nameInSystem;
+        public string NameInSystem
+        {
+            get { return _nameInSystem; }
+            set
+            {
+                if (_nameInSystem == null)
+                {
+                    _nameInSystem = value;
+                }
+                else if (_nameInSystem != null)
+                {
+                    _nameInSystem = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private string _originalName;
+        public string OriginalName
+        {
+            get { return _originalName; }
+            set
+            {
+                if (_originalName == null)
+                {
+                    _originalName = value;
+                }
+                else if (_originalName != null)
+                {
+                    _originalName = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private string _extension;
+        public string Extension
+        {
+            get { return _extension; }
+            set
+            {
+                if (_extension == null)
+                {
+                    _extension = value;
+                }
+                else if (_extension != null)
+                {
+                    _extension = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private DateTime _createdAt;
+        public DateTime CreatedAt
+        {
+            get { return _createdAt; }
+            set
+            {
+                if (_createdAt == DateTime.MinValue)
+                {
+                    _createdAt = value;
+                }
+            }
+        }
+
+        private string _hash;
+        public string Hash
+        {
+            get { return _hash; }
+            set
+            {
+                if (_hash == null)
+                {
+                    _hash = value;
+                }
+                else if (_hash != null)
+                {
+                    _hash = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private Guid _ownerUuid;
+        public Guid OwnerUuid
+        {
+            get { return _ownerUuid; }
+            set
+            {
+                if (_ownerUuid == Guid.Empty)
+                {
+                    _ownerUuid = value;
+                }
+            }
+        }
+
+        private bool _isSigned;
+        public bool IsSigned
+        {
+            get { return _isSigned; }
+            set
+            {
+                _isSigned = value;
+                OnUpdate();
+            }
+        }
+
+        private List<Guid> _whoCanSign;
+        public List<Guid> WhoCanSign
+        {
+            get { return _whoCanSign; }
+            set
+            {
+                if (_whoCanSign == null)
+                {
+                    _whoCanSign = value;
+                }
+                else if (_whoCanSign != null)
+                {
+                    _whoCanSign = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        private DateTime _signedBefore;
+        public DateTime SignedBefore
+        {
+            get { return _signedBefore; }
+            set
+            {
+                if (_signedBefore == DateTime.MinValue)
+                {
+                    _signedBefore = value;
+                } else if (_signedBefore != DateTime.MinValue)
+                {
+                    _signedBefore = value;
+                    OnUpdate();
+                }
+            }
+        }
+
+        public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign, string nameInSystem, DateTime signedBefore)
+        {
+            _id = Guid.NewGuid();
+            _name = Path.GetFileNameWithoutExtension(pathToFile) + "_unique" + _id.ToString();
+            _nameInSystem = nameInSystem;
+            _originalName = Path.GetFileNameWithoutExtension(pathToFile);
+            _extension = Path.GetExtension(pathToFile);
+            _createdAt = DateTime.Now;
+            _hash = Convert.ToBase64String(SHA256.Create().ComputeHash(File.ReadAllBytes(pathToFile)));
+            _ownerUuid = ownerUuid;
+            _isSigned = false;
+            _whoCanSign = whoCanSign;
+            _signedBefore = signedBefore;
+        }
+
+        public void OnUpdate()
+        {
+            Guid id = Id;
+            App.Data.Documents[App.Data.Documents.FindIndex(d => d.Id == id)] = this;
         }
     }
+
 }

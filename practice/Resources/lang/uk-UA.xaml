@@ -32,4 +32,7 @@
     <v:String x:Key="text_change_password">Зміна паролю</v:String>
     <v:String x:Key="button_change_password">Змінити</v:String>
     <v:String x:Key="password_succ_changed">Пароль успішно змінено</v:String>
+    <v:String x:Key="adddocument_select_document">Обрати документ</v:String>
+    <v:String x:Key="adddocument_name_document">Назва документа</v:String>
+    <v:String x:Key="adddocument_date_document">Виберіть до якого числа документ може бути підписаний</v:String>
 </ResourceDictionary>

@@ -1,8 +1,5 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
-using ModernWpf.Controls.Primitives;
 using practice.Pages;
-using practice.Utils.DataStructures;
 
 namespace practice
 {
@@ -24,6 +21,8 @@ namespace practice
                     Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_settings");
                     break;
                 case "add_document":
+                    ContentFrame.Navigate(new AddDocument());
+                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_add_document");
                     break;
                 case "logout":
                     // Maybe add a confirmation dialog or flyout
