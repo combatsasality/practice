@@ -4,12 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:practice.Pages"
+      xmlns:utils="clr-namespace:practice.Utils"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="800"
       Title="AddDocument"
       xmlns:ui="http://schemas.modernwpf.com/2019"
       Unloaded="Page_Unloaded"
       >
+    <Page.Resources>
+        <utils:DataGridHeightConverter x:Key="DataGridHeightConverter" />
+    </Page.Resources>
     <Grid>
         <Grid Margin="10,0,0,0">
             <Grid.ColumnDefinitions>
@@ -24,7 +28,7 @@
 
             <ui:SimpleStackPanel Grid.Column="1" x:Name="SecondPanel" Visibility="Hidden">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView x:Name="UserListView" SelectionMode="Single" Height="500">
+                    <ListView x:Name="UserListView" SelectionMode="Single" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource DataGridHeightConverter}}" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100" />

@@ -87,6 +87,7 @@
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Converters\DataGridHeightConverter.cs" />
     <Compile Include="Utils\Converters\ExpiredTimeConverter.cs" />
     <Compile Include="Utils\Converters\GuidConverter.cs" />
     <Compile Include="Utils\DataStructures\Document.cs" />

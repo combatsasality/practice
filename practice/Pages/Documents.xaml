@@ -18,7 +18,7 @@
         <TabControl>
             <TabItem Header="{DynamicResource documents_added_documents}">
                 <ui:SimpleStackPanel Margin="10,10,0,0">
-                    <DataGrid x:Name="AddedDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}" >
+                    <DataGrid x:Name="AddedDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}"  >
                         <!--<DataGrid.RowStyle>
                             --><!--<Style TargetType="DataGridRow">
                                 <Setter Property="IsHitTestVisible" Value="False"/>
