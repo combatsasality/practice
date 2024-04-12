@@ -140,7 +140,6 @@ namespace practice.Utils.DataStructures
         private bool _isSigned;
         public bool IsSigned
         {
-            // TODO: when implement sign document functionality, add on update in sign document method
             get { return _isSigned; }
             set
             {
@@ -212,6 +211,7 @@ namespace practice.Utils.DataStructures
                 byte[] signature = rsa.SignHash(hashBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
                 File.WriteAllBytes(@"data\documents\" + Name + Extension + ".pem", signature);
             }
+            OnUpdate();
         }
         public void GetSignAndDocument(string path)
         {

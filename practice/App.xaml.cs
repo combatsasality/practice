@@ -36,8 +36,6 @@ namespace practice
             Theme = Settings.Default.Theme;
             HelpHandler.CreateAllStuff();
             Data = JsonSerializer.Deserialize<DataWrapper>(File.ReadAllText(HelpHandler.PathData));
-            // TODO: remove this in deployment
-            CurrentUser = Data.Users.Find(u => u.Username == "admin");
 
         }
 
