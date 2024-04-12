@@ -20,6 +20,7 @@
         </ui:NavigationView.Header>
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem Content="{DynamicResource menu_add_document}" Tag="add_document" Icon="Add" />
+            <ui:NavigationViewItem Content="{DynamicResource menu_documents}" Tag="documents" Icon="Document" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.Content>
             <!--<ui:Frame x:Name="contentFrame" Source="Pages/StartPage.xaml"/>-->

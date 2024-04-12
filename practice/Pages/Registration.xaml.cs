@@ -10,6 +10,7 @@ namespace practice
         public Registration()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

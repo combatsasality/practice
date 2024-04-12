@@ -25,6 +25,7 @@
     <v:String x:Key="register_success">Користувач успішно зареєстрований</v:String>
     <v:String x:Key="menu_header">Меню</v:String>
     <v:String x:Key="menu_add_document">Додати документ</v:String>
+    <v:String x:Key="menu_documents">Документи</v:String>
     <v:String x:Key="menu_settings">Налаштування</v:String>
     <v:String x:Key="menu_logout">Вихід</v:String>
     <v:String x:Key="settings_general_settings">Загальні налаштування</v:String>
@@ -39,4 +40,12 @@
     <v:String x:Key="adddocument_not_selected_user_document">Будь ласка, виберіть користувача, якому ви хочете додати документ.</v:String>
     <v:String x:Key="adddocument_not_named_document">Будь ласка, введіть назву документа.</v:String>
     <v:String x:Key="adddocument_invalid_selected_date_document">Дата не повинна бути меншою за сьогоднішній день.</v:String>
+    <v:String x:Key="documents_added_documents">Додані документи</v:String>
+    <v:String x:Key="documents_header_name">Назва документу</v:String>
+    <v:String x:Key="documents_header_extension">Розширення документа</v:String>
+    <v:String x:Key="documents_header_who_can_sign">Хто може підписати</v:String>
+    <v:String x:Key="documents_header_is_signed">Підписано</v:String>
+    <v:String x:Key="documents_header_signed_before">Підписати до</v:String>
+    <v:String x:Key="documents_header_created_at">Додано в систему</v:String>
+    <v:String x:Key="documents_sign_documents">Документи, що підлягають підпису</v:String>
 </ResourceDictionary>

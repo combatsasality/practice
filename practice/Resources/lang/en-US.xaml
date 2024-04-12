@@ -25,6 +25,7 @@
     <v:String x:Key="register_success">User is successfully registered</v:String>
     <v:String x:Key="menu_header">Menu</v:String>
     <v:String x:Key="menu_add_document">Add document</v:String>
+    <v:String x:Key="menu_documents">Documents</v:String>
     <v:String x:Key="menu_settings">Settings</v:String>
     <v:String x:Key="menu_logout">Log out</v:String>
     <v:String x:Key="settings_general_settings">General settings</v:String>
@@ -39,4 +40,12 @@
     <v:String x:Key="adddocument_not_selected_user_document">Please select a user to add the document to.</v:String>
     <v:String x:Key="adddocument_not_named_document">Please enter a name for the document.</v:String>
     <v:String x:Key="adddocument_invalid_selected_date_document">The date must not be less than today's date.</v:String>
+    <v:String x:Key="documents_added_documents">Added documents</v:String>
+    <v:String x:Key="documents_header_name">Name</v:String>
+    <v:String x:Key="documents_header_extension">Document extension</v:String>
+    <v:String x:Key="documents_header_who_can_sign">Who can sign</v:String>
+    <v:String x:Key="documents_header_is_signed">Is signed</v:String>
+    <v:String x:Key="documents_header_signed_before">Sign up to</v:String>
+    <v:String x:Key="documents_header_created_at">Created at</v:String>
+    <v:String x:Key="documents_sign_documents">Documents to be signed</v:String>
 </ResourceDictionary>

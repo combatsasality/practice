@@ -11,11 +11,6 @@
       >
 
     <Grid>
-        
-        <!--<Menu DockPanel.Dock="Left"  >
-            <MenuItem x:Name="menuLanguage" Header="{DynamicResource text_menu_language}" />
-            <MenuItem x:Name="menuTheme" Header="{DynamicResource text_menu_theme}" />
-        </Menu>-->
         <TabControl>
             <TabItem Header="{DynamicResource settings_general_settings}">
                 <ui:SimpleStackPanel Margin="10,10,0,0">

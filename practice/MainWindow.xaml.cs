@@ -24,6 +24,10 @@ namespace practice
                     ContentFrame.Navigate(new AddDocument());
                     Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_add_document");
                     break;
+                case "documents":
+                    ContentFrame.Navigate(new Documents());
+                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_documents");
+                    break;
                 case "logout":
                     // Maybe add a confirmation dialog or flyout
                     Logout();

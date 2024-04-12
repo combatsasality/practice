@@ -72,6 +72,9 @@
     <Compile Include="Pages\AddDocument.xaml.cs">
       <DependentUpon>AddDocument.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,7 @@
     <Compile Include="Utils\DataStructures\User.cs" />
     <Compile Include="Utils\DataWrapper.cs" />
     <Compile Include="Utils\HelpHandler.cs" />
+    <Compile Include="Utils\ItemConverter.cs" />
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +107,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AddDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Documents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

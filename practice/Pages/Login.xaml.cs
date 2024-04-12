@@ -12,6 +12,7 @@ namespace practice.Pages
         public Login()
         {
             InitializeComponent();
+            DataContext = this;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
