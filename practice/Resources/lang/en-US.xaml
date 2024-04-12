@@ -63,4 +63,9 @@
     <v:String x:Key="home_technology_1">Platform: .NET 7+</v:String>
     <v:String x:Key="home_technology_2">User interface: Windows Presentation Foundation (WPF)</v:String>
     <v:String x:Key="home_technology_3">Working with files as a data source</v:String>
+    <v:String x:Key="checksign_sign_correct">Sign correct</v:String>
+    <v:String x:Key="checksign_sign_not_correct">Sign not correct</v:String>
+    <v:String x:Key="checksign_file_not_found">File not found</v:String>
+    <v:String x:Key="checksign_not_correct_path">Not correct path</v:String>
+    <v:String x:Key="checksign_no_unauthorized_access">No unathorized access to file</v:String>
 </ResourceDictionary>

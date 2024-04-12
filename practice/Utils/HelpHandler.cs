@@ -126,24 +126,24 @@ namespace practice.Utils
                 }
                 if (isSignatureValid)
                     {
-                        MessageBox.Show("Підпис правильний");
+                        MessageBox.Show((string)lang["checksign_sign_correct"]);
                         return;
                     }
                 }
             } catch (Exception e) when (e is ArgumentException || e is FileNotFoundException)
             {
-                MessageBox.Show("Файл не знайдено");
+                MessageBox.Show((string)lang["checksign_file_not_found"]);
             }
             catch (Exception e) when (e is DirectoryNotFoundException || e is IOException)
             {
-                MessageBox.Show("Невірно введений шлях");
+                MessageBox.Show((string)lang["checksign_not_correct_path"]);
             }
             catch (Exception e) when (e is UnauthorizedAccessException)
             {
-                MessageBox.Show("Немає доступу до файлу");
+                MessageBox.Show((string)lang["checksign_no_unauthorized_access"]);
             }
 
-            MessageBox.Show("Підпис не правильний");
+            MessageBox.Show((string)lang["checksign_sign_correct"]);
         }
     }
 }

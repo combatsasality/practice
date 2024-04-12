@@ -62,5 +62,10 @@
     <v:String x:Key="home_technology_0">Мова програмування: C</v:String>
     <v:String x:Key="home_technology_1">Платформа: .NET 7+</v:String>
     <v:String x:Key="home_technology_2">Інтерфейс користувача: Windows Presentation Foundation (WPF)</v:String>
-    <v:String x:Key="home_technology_3">Робота з файлами як джерелом даних</v:String>
+    <v:String x:Key="home_technology_3">Робота з файлами як джерелом даних</v:String>    
+    <v:String x:Key="checksign_sign_correct">Підпис правильний</v:String>
+    <v:String x:Key="checksign_sign_not_correct">Підпис не правильний</v:String>
+    <v:String x:Key="checksign_file_not_found">Файл не знайдено</v:String>
+    <v:String x:Key="checksign_not_correct_path">Невірно введений шлях</v:String>
+    <v:String x:Key="checksign_no_unauthorized_access">Немає доступу до файлу</v:String>
 </ResourceDictionary>
