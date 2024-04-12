@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.IO;
 using ModernWpf;
 using practice.Utils.DataStructures;
+using System.Windows.Threading;
 
 
 namespace practice
@@ -35,6 +36,9 @@ namespace practice
             Theme = Settings.Default.Theme;
             HelpHandler.CreateAllStuff();
             Data = JsonSerializer.Deserialize<DataWrapper>(File.ReadAllText(HelpHandler.PathData));
+            // TODO: remove this in deployment
+            CurrentUser = Data.Users.Find(u => u.Username == "admin");
+
         }
 
 
@@ -72,6 +76,11 @@ namespace practice
         {
             base.OnStartup(e);
             Exit += App_Exit;
+            DispatcherUnhandledException += App_DispatcherUnhandledException;
+        }
+        private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            Data.Save();
         }
         private void App_Exit(object sender, ExitEventArgs e)
         {

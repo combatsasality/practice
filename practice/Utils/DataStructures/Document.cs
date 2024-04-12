@@ -201,6 +201,24 @@ namespace practice.Utils.DataStructures
         {
             File.Delete(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", Name, Extension)));
         }
+        public void SignDocument(string privateKey)
+        {
+            // TODO: rewrite this method
+            using (RSA rsa = RSA.Create())
+            {
+                rsa.FromXmlString(privateKey);
+                byte[] fileContent = File.ReadAllBytes(@"data\documents\" + Name + Extension);
+                byte[] hashBytes = SHA256.Create().ComputeHash(fileContent);
+                byte[] signature = rsa.SignHash(hashBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+                File.WriteAllBytes(@"data\documents\" + Name + Extension + ".pem", signature);
+            }
+        }
+        public void GetSignAndDocument(string path)
+        {
+            // TODO: rewrite this method
+            File.WriteAllBytes(path + @"\" + NameInSystem + Extension, File.ReadAllBytes(@"data\documents\" + Name + Extension));
+            File.WriteAllBytes(path + @"\" + NameInSystem + Extension + ".pem", File.ReadAllBytes(@"data\documents\" + Name + Extension + ".pem"));
+        }
         public void OnUpdate()
         {
             Guid id = Id;

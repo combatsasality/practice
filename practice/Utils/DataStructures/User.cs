@@ -126,6 +126,7 @@ namespace practice.Utils.DataStructures
         {
             Guid id = Id;
             App.Data.Users[App.Data.Users.FindIndex(u => u.Id == id)] = this;
+            App.Data.Save();
         }
     }
 }

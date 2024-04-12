@@ -47,8 +47,12 @@
     <v:String x:Key="documents_header_is_signed">Is signed</v:String>
     <v:String x:Key="documents_header_signed_before">Sign up to</v:String>
     <v:String x:Key="documents_header_created_at">Created at</v:String>
+    <v:String x:Key="documents_header_expired_sign_time">Signing time has expired</v:String>
+    <v:String x:Key="documents_header_owner">Owner</v:String>
     <v:String x:Key="documents_sign_documents">Documents to be signed</v:String>
     <v:String x:Key="documents_context_view_document">View documents</v:String>
     <v:String x:Key="documents_context_delete_document">Delete documents</v:String>
+    <v:String x:Key="documents_context_sign_document">Sign documents</v:String>
+    <v:String x:Key="documents_context_get_document">Get documents</v:String>
 
 </ResourceDictionary>

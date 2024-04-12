@@ -24,7 +24,7 @@
 
             <ui:SimpleStackPanel Grid.Column="1" x:Name="SecondPanel" Visibility="Hidden">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView x:Name="UserListView" SelectionMode="Multiple" Height="500">
+                    <ListView x:Name="UserListView" SelectionMode="Single" Height="500">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100" />

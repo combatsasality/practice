@@ -84,12 +84,14 @@
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Converters\ExpiredTimeConverter.cs" />
+    <Compile Include="Utils\Converters\GuidConverter.cs" />
     <Compile Include="Utils\DataStructures\Document.cs" />
     <Compile Include="Utils\DataStructures\PublicKeys.cs" />
     <Compile Include="Utils\DataStructures\User.cs" />
     <Compile Include="Utils\DataWrapper.cs" />
     <Compile Include="Utils\HelpHandler.cs" />
-    <Compile Include="Utils\ItemConverter.cs" />
+    <Compile Include="Utils\Converters\ItemConverter.cs" />
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +164,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
+      <Version>1.1.5</Version>
+    </PackageReference>
     <PackageReference Include="ModernWpfUI">
       <Version>0.9.6</Version>
     </PackageReference>

@@ -11,6 +11,8 @@
       Title="Documents">
     <Page.Resources>
         <utils:ItemConverter x:Key="WhoCanSignConverter" />
+        <utils:GuidConverter x:Key="GuidConverter" />
+        <utils:ExpiredTimeConverter x:Key="ExpiredTimeConverter" />
     </Page.Resources>
     <Grid>
         <TabControl>
@@ -39,17 +41,24 @@
                             <DataGridCheckBoxColumn Header="{DynamicResource documents_header_is_signed}" Binding="{Binding IsSigned}" />
                             <DataGridTextColumn Header="{DynamicResource documents_header_signed_before}" Binding="{Binding SignedBefore, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}" />
                             <DataGridTextColumn Header="{DynamicResource documents_header_created_at}" Binding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}"  />
+                            <DataGridCheckBoxColumn Header="{DynamicResource documents_header_expired_sign_time}" Binding="{Binding SignedBefore, Converter={StaticResource ExpiredTimeConverter}}" />
                         </DataGrid.Columns>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick">
+                                <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick_AddedDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Preview"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
-                                <MenuItem Header="{DynamicResource documents_context_delete_document}" Click="MenuItemDeleteClick">
+                                <MenuItem Header="{DynamicResource documents_context_delete_document}" Click="MenuItemDeleteClick_AddedDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Delete"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_AddedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Download"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
                             </ContextMenu>
@@ -60,7 +69,35 @@
 
             <TabItem Header="{DynamicResource documents_sign_documents}">
                 <ui:SimpleStackPanel Margin="10,10,0,0">
-                    
+                    <DataGrid x:Name="ToSignDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{DynamicResource documents_header_name}" Binding="{Binding NameInSystem}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_extension}" Binding="{Binding Extension}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_owner}" Binding="{Binding OwnerUuid, Converter={StaticResource GuidConverter}}" />
+                            <DataGridCheckBoxColumn Header="{DynamicResource documents_header_is_signed}" Binding="{Binding IsSigned}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_signed_before}" Binding="{Binding SignedBefore, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_created_at}" Binding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}"  />
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick_ToSignDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Preview"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_sign_document}" Click="MenuItemSignClick_ToSignDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Accept"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ToSignDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Download"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
                 </ui:SimpleStackPanel>
             </TabItem>
         </TabControl>
