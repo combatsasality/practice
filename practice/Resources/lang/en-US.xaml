@@ -24,9 +24,11 @@
     <v:String x:Key="register_button_text">Sign up</v:String>
     <v:String x:Key="register_success">User is successfully registered</v:String>
     <v:String x:Key="menu_header">Menu</v:String>
+    <v:String x:Key="menu_home">Home</v:String>
     <v:String x:Key="menu_add_document">Add document</v:String>
     <v:String x:Key="menu_documents">Documents</v:String>
     <v:String x:Key="menu_settings">Settings</v:String>
+    <v:String x:Key="menu_check_sign">Check sign</v:String>
     <v:String x:Key="menu_logout">Log out</v:String>
     <v:String x:Key="settings_general_settings">General settings</v:String>
     <v:String x:Key="settings_account">Account settings</v:String>
@@ -54,5 +56,11 @@
     <v:String x:Key="documents_context_delete_document">Delete documents</v:String>
     <v:String x:Key="documents_context_sign_document">Sign documents</v:String>
     <v:String x:Key="documents_context_get_document">Get documents</v:String>
-
+    <v:String x:Key="home_about_app_header">About the app</v:String>
+    <v:String x:Key="home_about_app">It is an integrated system for automating the management of electronic document flow at enterprises, which allows you to optimize the process of processing incoming and outgoing documents. The system includes tracking the status of documents, meeting processing deadlines, storing an archive of documents with advanced filtering, sorting, and categorization capabilities. The functionality of applying and verifying an electronic digital signature (EDS) ensures a high level of document management security. The access control system allows you to effectively manage user rights, restricting access to confidential information.</v:String>
+    <v:String x:Key="home_technology_header">Technologies used in the application</v:String>
+    <v:String x:Key="home_technology_0">Programming language: C#</v:String>
+    <v:String x:Key="home_technology_1">Platform: .NET 7+</v:String>
+    <v:String x:Key="home_technology_2">User interface: Windows Presentation Foundation (WPF)</v:String>
+    <v:String x:Key="home_technology_3">Working with files as a data source</v:String>
 </ResourceDictionary>

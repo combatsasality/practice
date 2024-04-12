@@ -8,6 +8,8 @@ using System.Text.Json;
 using System.Text.Unicode;
 using System.Windows;
 using System.Linq;
+using practice.Utils.DataStructures;
+using Microsoft.Win32;
 
 
 namespace practice.Utils
@@ -83,5 +85,65 @@ namespace practice.Utils
             File.WriteAllBytes(@"data\documents\" + newName + Path.GetExtension(path), File.ReadAllBytes(path));
         }
 
+        public static void CheckSignPath()
+        {
+            ResourceDictionary lang = GetLanguageDictionary();
+
+            OpenFileDialog documentDialog = new OpenFileDialog();
+            if (documentDialog.ShowDialog() == false)
+            {
+                return;
+            }
+            string PathDocument = documentDialog.FileName;
+            OpenFileDialog signDialog = new OpenFileDialog();
+            signDialog.Filter = "Encrypted files (*.pem)|*.pem";
+            if (signDialog.ShowDialog() == false)
+            {
+                return;
+            }
+            string PathSign = signDialog.FileName;
+            try { 
+            using (RSA rsa = RSA.Create())
+            {
+                bool isSignatureValid = false;
+                byte[] hashBytes;
+                byte[] signatureBytes = File.ReadAllBytes(PathSign);
+
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    hashBytes = sha256.ComputeHash(File.ReadAllBytes(PathDocument));
+                }
+
+                foreach (PublicKeys publicKey in App.Data.PublicKeys)
+                {
+                    rsa.FromXmlString(publicKey.PublicKey);
+                    isSignatureValid = rsa.VerifyHash(hashBytes, signatureBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+                    if (isSignatureValid)
+                    {
+                        break;
+                    }
+
+                }
+                if (isSignatureValid)
+                    {
+                        MessageBox.Show("Підпис правильний");
+                        return;
+                    }
+                }
+            } catch (Exception e) when (e is ArgumentException || e is FileNotFoundException)
+            {
+                MessageBox.Show("Файл не знайдено");
+            }
+            catch (Exception e) when (e is DirectoryNotFoundException || e is IOException)
+            {
+                MessageBox.Show("Невірно введений шлях");
+            }
+            catch (Exception e) when (e is UnauthorizedAccessException)
+            {
+                MessageBox.Show("Немає доступу до файлу");
+            }
+
+            MessageBox.Show("Підпис не правильний");
+        }
     }
 }

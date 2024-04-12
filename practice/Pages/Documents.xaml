@@ -90,6 +90,7 @@
                                         <ui:SymbolIcon Symbol="Accept"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
+                                <Separator />
                                 <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ToSignDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Download"/>

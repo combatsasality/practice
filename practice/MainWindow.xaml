@@ -16,15 +16,16 @@
             <DynamicResource ResourceKey="menu_header" />
         </ui:NavigationView.PaneTitle>
         <ui:NavigationView.Header x:Uid="NavigationHeader">
-            Title
+            <DynamicResource ResourceKey="menu_home" />
         </ui:NavigationView.Header>
         <ui:NavigationView.MenuItems>
+            <ui:NavigationViewItem x:Name="MenuHome" Content="{DynamicResource menu_home}" Tag="home" Icon="Home" />
             <ui:NavigationViewItem Content="{DynamicResource menu_add_document}" Tag="add_document" Icon="Add" />
             <ui:NavigationViewItem Content="{DynamicResource menu_documents}" Tag="documents" Icon="Document" />
+            <ui:NavigationViewItem Content="{DynamicResource menu_check_sign}" Tag="check_sign" Icon="ProtectedDocument" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.Content>
-            <!--<ui:Frame x:Name="contentFrame" Source="Pages/StartPage.xaml"/>-->
-            <ui:Frame x:Name="ContentFrame"/>
+            <ui:Frame x:Name="ContentFrame" Source="Pages/Home.xaml"/>
         </ui:NavigationView.Content>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem Content="{DynamicResource menu_settings}" Tag="settings" Icon="Setting" />

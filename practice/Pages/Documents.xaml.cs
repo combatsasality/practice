@@ -97,6 +97,7 @@ namespace practice.Pages
                 {
                     if (document.IsSigned) document.GetSignAndDocument(dialog.FileName);
                 }
+
             }
         }
     }
