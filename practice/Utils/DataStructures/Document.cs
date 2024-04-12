@@ -197,7 +197,10 @@ namespace practice.Utils.DataStructures
             _whoCanSign = whoCanSign;
             _signedBefore = signedBefore;
         }
-
+        public void Delete()
+        {
+            File.Delete(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", Name, Extension)));
+        }
         public void OnUpdate()
         {
             Guid id = Id;

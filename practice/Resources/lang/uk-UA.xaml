@@ -48,4 +48,6 @@
     <v:String x:Key="documents_header_signed_before">Підписати до</v:String>
     <v:String x:Key="documents_header_created_at">Додано в систему</v:String>
     <v:String x:Key="documents_sign_documents">Документи, що підлягають підпису</v:String>
+    <v:String x:Key="documents_context_view_document">Переглянути документи</v:String>    
+    <v:String x:Key="documents_context_delete_document">Видалити документи</v:String>
 </ResourceDictionary>

@@ -48,4 +48,7 @@
     <v:String x:Key="documents_header_signed_before">Sign up to</v:String>
     <v:String x:Key="documents_header_created_at">Created at</v:String>
     <v:String x:Key="documents_sign_documents">Documents to be signed</v:String>
+    <v:String x:Key="documents_context_view_document">View documents</v:String>
+    <v:String x:Key="documents_context_delete_document">Delete documents</v:String>
+
 </ResourceDictionary>

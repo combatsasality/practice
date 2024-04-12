@@ -17,11 +17,21 @@
             <TabItem Header="{DynamicResource documents_added_documents}">
                 <ui:SimpleStackPanel Margin="10,10,0,0">
                     <DataGrid x:Name="AddedDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}" >
-                        <DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
+                        <!--<DataGrid.RowStyle>
+                            --><!--<Style TargetType="DataGridRow">
                                 <Setter Property="IsHitTestVisible" Value="False"/>
-                            </Style>
-                        </DataGrid.RowStyle>
+                            </Style>-->
+                            <!--<Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="{x:Null}" />
+                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="{x:Null}" />
+                                        <Setter Property="BorderBrush" Value="{x:Null}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>--><!--
+                        </DataGrid.RowStyle>-->
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{DynamicResource documents_header_name}" Binding="{Binding NameInSystem}" />
                             <DataGridTextColumn Header="{DynamicResource documents_header_extension}" Binding="{Binding Extension}" />
@@ -30,6 +40,20 @@
                             <DataGridTextColumn Header="{DynamicResource documents_header_signed_before}" Binding="{Binding SignedBefore, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}" />
                             <DataGridTextColumn Header="{DynamicResource documents_header_created_at}" Binding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}"  />
                         </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Preview"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_delete_document}" Click="MenuItemDeleteClick">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Delete"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                     </DataGrid>
                 </ui:SimpleStackPanel>
             </TabItem>
