@@ -78,7 +78,7 @@ namespace practice.Pages
             HelpHandler.SaveFile(FilePath, document.Name);
             SelectedDocument = null;
             FilePath = null;
-            UserListView.SelectedItems.Clear();
+            UserListView.SelectedValue = null;
             DocumentNameTextBox.Text = "";
             DocumentDateDatePicker.SelectedDate = null;
             ChangeVisibility(Visibility.Hidden);

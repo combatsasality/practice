@@ -143,7 +143,7 @@ namespace practice.Utils
                 MessageBox.Show((string)lang["checksign_no_unauthorized_access"]);
             }
 
-            MessageBox.Show((string)lang["checksign_sign_correct"]);
+            MessageBox.Show((string)lang["checksign_sign_not_correct"]);
         }
     }
 }
