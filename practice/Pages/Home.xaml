@@ -19,11 +19,11 @@
             <TextBlock Margin="0,5,0,0" LineHeight="30" Text="{DynamicResource home_about_app}" TextWrapping="Wrap" FontSize="18"/>
         </ui:SimpleStackPanel>
         <ui:SimpleStackPanel Grid.Column="1" Margin="10,0,0,0">
-            <TextBlock Text="{DynamicResource home_technology_header}" FontSize="24" />
-            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_0}" FontSize="18" />
-            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_1}" FontSize="18" />
-            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_2}" FontSize="18" />
-            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_3}" FontSize="18" />
+            <TextBlock Text="{DynamicResource home_technology_header}"  FontSize="24" />
+            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_0}" TextWrapping="Wrap" FontSize="18" />
+            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_1}" TextWrapping="Wrap" FontSize="18" />
+            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_2}" TextWrapping="Wrap" FontSize="18" />
+            <TextBlock Margin="0,0,0,5" Text="{DynamicResource home_technology_3}" TextWrapping="Wrap" FontSize="18" />
         </ui:SimpleStackPanel>
     </Grid>
 </Page>

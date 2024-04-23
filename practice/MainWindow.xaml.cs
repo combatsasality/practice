@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using practice.Pages;
 using practice.Utils;
+using ModernWpf.Controls;
 
 namespace practice
 {
@@ -14,26 +14,26 @@ namespace practice
         }
 
 
-        private void NavigationView_SelectionChanged(ModernWpf.Controls.NavigationView sender, ModernWpf.Controls.NavigationViewSelectionChangedEventArgs args)
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.SelectedItemContainer == null) return;
             switch (args.SelectedItemContainer.Tag.ToString())
             {
                 case "home":
                     ContentFrame.Navigate(new Home());
-                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_home");
+                    Menu.SetResourceReference(NavigationView.HeaderProperty, "menu_home");
                     break;
                 case "settings":
                     ContentFrame.Navigate(new Settings());
-                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_settings");
+                    Menu.SetResourceReference(NavigationView.HeaderProperty, "menu_settings");
                     break;
                 case "add_document":
                     ContentFrame.Navigate(new AddDocument());
-                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_add_document");
+                    Menu.SetResourceReference(NavigationView.HeaderProperty, "menu_add_document");
                     break;
                 case "documents":
                     ContentFrame.Navigate(new Documents());
-                    Menu.SetResourceReference(ModernWpf.Controls.NavigationView.HeaderProperty, "menu_documents");
+                    Menu.SetResourceReference(NavigationView.HeaderProperty, "menu_documents");
                     break;
                 case "check_sign":
                     HelpHandler.CheckSignPath();
