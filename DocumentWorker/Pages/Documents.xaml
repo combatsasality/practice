@@ -50,15 +50,15 @@
                                         <ui:SymbolIcon Symbol="Preview"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
-                                <MenuItem Header="{DynamicResource documents_context_delete_document}" Click="MenuItemDeleteClick_AddedDocumentsDataGrid">
-                                    <MenuItem.Icon>
-                                        <ui:SymbolIcon Symbol="Delete"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-                                <Separator />
                                 <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_AddedDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Download"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{DynamicResource documents_context_archive}" Click="MenuItemArchiveClick_AddedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="NewWindow" />
                                     </MenuItem.Icon>
                                 </MenuItem>
                             </ContextMenu>
@@ -85,15 +85,53 @@
                                         <ui:SymbolIcon Symbol="Preview"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ToSignDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Download"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
                                 <MenuItem Header="{DynamicResource documents_context_sign_document}" Click="MenuItemSignClick_ToSignDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Accept"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
-                                <Separator />
-                                <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ToSignDocumentsDataGrid">
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </ui:SimpleStackPanel>
+            </TabItem>
+
+            <TabItem Header="{DynamicResource documents_archived_documents}">
+                <ui:SimpleStackPanel Margin="10,10,0,0">
+                    <DataGrid x:Name="ArchivedDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" SelectionMode="Single" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{DynamicResource documents_header_name}" Binding="{Binding NameInSystem}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_extension}" Binding="{Binding Extension}" />
+                            <DataGridCheckBoxColumn Header="{DynamicResource documents_header_is_signed}" Binding="{Binding IsSigned}" />
+                            <DataGridTextColumn Header="{DynamicResource documents_header_created_at}" Binding="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy hh:mm:ss}}"  />
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick_ArchivedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Preview"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ArchivedDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Download"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{DynamicResource documents_context_unarchive}" Click="MenuItemUnarchiveClick_ArchivedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="NewWindow" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_delete_document}" Click="MenuItemDeleteClick_ArchivedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Delete"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
                             </ContextMenu>

@@ -68,4 +68,10 @@
     <v:String x:Key="checksign_file_not_found">Файл не знайдено</v:String>
     <v:String x:Key="checksign_not_correct_path">Невірно введений шлях</v:String>
     <v:String x:Key="checksign_no_unauthorized_access">Немає доступу до файлу</v:String>
+    <v:String x:Key="documents_context_archive">Заархівувати документ</v:String>
+    <v:String x:Key="documents_archived_documents">Архівні документи</v:String>
+    <v:String x:Key="documents_context_unarchive">Розархівувати документ</v:String>
+    <v:String x:Key="unarchive_title">Операція розархівування</v:String>
+    <v:String x:Key="button_cancel">Скасувати</v:String>
+    <v:String x:Key="label_unarchive_operation">Щоб розархівувати документ, потрібно вказати час, коли ви хочете підписати документ, і нового підписанта</v:String>
 </ResourceDictionary>

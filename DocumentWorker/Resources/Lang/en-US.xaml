@@ -68,4 +68,10 @@
     <v:String x:Key="checksign_file_not_found">File not found</v:String>
     <v:String x:Key="checksign_not_correct_path">Not correct path</v:String>
     <v:String x:Key="checksign_no_unauthorized_access">No unathorized access to file</v:String>
+    <v:String x:Key="documents_context_archive">Archive document</v:String>
+    <v:String x:Key="documents_archived_documents">Archived Documents</v:String>
+    <v:String x:Key="documents_context_unarchive">Unarchive document</v:String>
+    <v:String x:Key="unarchive_title">Unarchive operation</v:String>
+    <v:String x:Key="button_cancel">Cancel</v:String>
+    <v:String x:Key="label_unarchive_operation">To unarchive a document you need to specify the time when you want to sign the document and a new signer</v:String>
 </ResourceDictionary>

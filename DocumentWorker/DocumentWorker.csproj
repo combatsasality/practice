@@ -96,6 +96,9 @@
     <Compile Include="Utils\DataWrapper.cs" />
     <Compile Include="Utils\HelpHandler.cs" />
     <Compile Include="Utils\Converters\ItemConverter.cs" />
+    <Compile Include="Windows\UnarchiveDialogBox.xaml.cs">
+      <DependentUpon>UnarchiveDialogBox.xaml</DependentUpon>
+    </Compile>
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\UnarchiveDialogBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -182,5 +189,6 @@
       <Version>8.0.3</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -182,6 +182,23 @@ namespace DocumentWorker.Utils.DataStructures
             }
         }
 
+        private bool? _isArchived;
+        public bool IsArchived
+        {
+            get { return _isArchived == null ? false : (bool) _isArchived; }
+            set
+            {
+                if (_isArchived == null)
+                {
+                    _isArchived = value;
+                } else if (_signedBefore != null)
+                {
+                    _isArchived = value;
+                    OnUpdate();
+                }
+            }
+        }
+
         public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign, string nameInSystem, DateTime? signedBefore)
         {
             _id = Guid.NewGuid();
@@ -195,6 +212,7 @@ namespace DocumentWorker.Utils.DataStructures
             _isSigned = false;
             _whoCanSign = whoCanSign;
             _signedBefore = signedBefore;
+            _isArchived = false;
         }
         public void Delete()
         {
@@ -223,6 +241,7 @@ namespace DocumentWorker.Utils.DataStructures
         {
             Guid id = Id;
             App.Data.Documents[App.Data.Documents.FindIndex(d => d.Id == id)] = this;
+            App.Data.Save();
         }
     }
 
