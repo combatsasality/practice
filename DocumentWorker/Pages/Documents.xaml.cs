@@ -80,7 +80,7 @@ namespace DocumentWorker.Pages
         {
             foreach (Document document in AddedDocumentsDataGrid.SelectedItems)
             {
-               Document current = App.Data.Documents.Find(d => d.Id == document.Id);
+                Document current = App.Data.Documents.Find(d => d.Id == document.Id);
                 current.IsArchived = true;
                 current.SignedBefore = null;
                 current.WhoCanSign.Clear();
