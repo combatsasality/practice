@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DocumentWorker.Windows"
         mc:Ignorable="d"
-        MinHeight="100"
+        ResizeMode="NoResize"
+     
         MinWidth="300"
         MaxHeight="800"
         SizeToContent="WidthAndHeight"
-        ResizeMode="NoResize"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         Title="{DynamicResource unarchive_title}"
-        ui:WindowHelper.UseModernWindowStyle="True">
+        >
 
 
     <Grid Margin="10">
