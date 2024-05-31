@@ -5,7 +5,9 @@ using System.Windows.Media;
 
 namespace DocumentWorker.Pages
 {
-
+    /// <summary>
+    /// Interaction logic for Login.xaml
+    /// </summary>
     public partial class Login : Page
     {
         public Login()

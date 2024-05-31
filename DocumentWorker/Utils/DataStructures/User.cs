@@ -2,6 +2,9 @@
 
 namespace DocumentWorker.Utils.DataStructures
 {
+    /// <summary>
+    /// Class User represents a user in the system
+    /// </summary>
     public struct User
     {
         public Guid _id;

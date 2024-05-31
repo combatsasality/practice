@@ -9,6 +9,9 @@ using DocumentWorker.Windows;
 
 namespace DocumentWorker.Pages
 {
+    /// <summary>
+    /// Interaction logic for Documents.xaml
+    /// </summary>
     public partial class Documents : Page
     {
         public Documents()

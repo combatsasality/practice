@@ -4,6 +4,10 @@ using System.Windows.Data;
 
 namespace DocumentWorker.Utils
 {
+    /// <summary>
+    /// Converter for Guid
+    /// Convert Guid to username
+    /// </summary>
     public class GuidConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

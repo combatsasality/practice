@@ -13,6 +13,10 @@ using Microsoft.Win32;
 
 namespace DocumentWorker.Utils
 {
+    /// <summary>
+    /// Class HelpHandler
+    /// Auxiliary class
+    /// </summary>
     public static class HelpHandler
     {
         public static string PathData = @"data/data.json";

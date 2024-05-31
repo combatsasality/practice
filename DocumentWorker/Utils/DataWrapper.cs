@@ -9,7 +9,10 @@ using System.Text.RegularExpressions;
 
 namespace DocumentWorker.Utils
 {
-
+    /// <summary>
+    /// Class DataWrapper
+    /// It is a wrapper for all data structures of the project
+    /// </summary>
     public class DataWrapper
     {
         public List<User> Users { get; set; } = new List<User>();

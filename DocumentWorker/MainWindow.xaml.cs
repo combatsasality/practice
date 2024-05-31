@@ -5,6 +5,9 @@ using ModernWpf.Controls;
 
 namespace DocumentWorker
 {
+    /// <summary>
+    /// Main window of the application
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

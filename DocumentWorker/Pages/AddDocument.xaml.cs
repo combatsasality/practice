@@ -9,6 +9,9 @@ using System;
 
 namespace DocumentWorker.Pages
 {
+    /// <summary>
+    /// Interaction logic for AddDocument.xaml
+    /// </summary>
     public partial class AddDocument : Page
     {
         public StreamReader SelectedDocument;

@@ -5,6 +5,9 @@ using DocumentWorker.Utils;
 
 namespace DocumentWorker
 {
+    /// <summary>
+    /// Interaction logic for Registration.xaml
+    /// </summary>
     public partial class Registration : Page
     {
         public Registration()

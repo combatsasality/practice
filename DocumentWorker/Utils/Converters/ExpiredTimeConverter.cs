@@ -4,6 +4,10 @@ using System.Windows.Data;
 
 namespace DocumentWorker.Utils
 {
+    /// <summary>
+    /// Converter for expired time
+    /// Convert time to bool
+    /// </summary>
     public class ExpiredTimeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -6,7 +6,9 @@ using System.Windows;
 
 namespace DocumentWorker.Windows
 {
-
+    /// <summary>
+    /// Class UnarchiveDialogBox represents a dialog box for unarchiving a document
+    /// </summary>
     public partial class UnarchiveDialogBox : Window
     {
         private Document _document;

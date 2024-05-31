@@ -2,6 +2,9 @@
 
 namespace DocumentWorker.Utils.DataStructures
 {
+    /// <summary>
+    /// Class PublicKeys represents a public key in the system
+    /// </summary>
     public struct PublicKeys
     {
         public Guid Id { get; set; }

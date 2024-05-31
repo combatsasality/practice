@@ -4,6 +4,9 @@ using System.Windows.Data;
 
 namespace DocumentWorker.Utils
 {
+    /// <summary>
+    /// Converter for DataGrid height
+    /// </summary>
     public class DataGridHeightConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

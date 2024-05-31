@@ -7,6 +7,10 @@ using System.Linq;
 
 namespace DocumentWorker.Utils
 {
+    /// <summary>
+    /// Converter for item
+    /// Converts a list of user ids to a string of usernames
+    /// </summary>
     public class ItemConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

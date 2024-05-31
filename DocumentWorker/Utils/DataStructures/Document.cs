@@ -5,6 +5,9 @@ using System.Security.Cryptography;
 
 namespace DocumentWorker.Utils.DataStructures
 {
+    /// <summary>
+    /// Class document represents a document in the system
+    /// </summary>
     public struct Document
     {
         private Guid _id;

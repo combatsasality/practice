@@ -14,6 +14,10 @@ using System.Windows.Threading;
 
 namespace DocumentWorker
 {
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// This is the entry point to the program.
+    /// </summary>
     public partial class App : Application
     {
         public static DataWrapper Data;
