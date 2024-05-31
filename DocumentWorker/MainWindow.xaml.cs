@@ -16,7 +16,11 @@ namespace DocumentWorker
             Menu.SelectedItem = MenuHome;
         }
 
-
+        /// <summary>
+        /// Event handler for the NavigationView SelectionChanged event, which is triggered when the user selects a menu item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.SelectedItemContainer == null) return;
@@ -43,7 +47,6 @@ namespace DocumentWorker
                     sender.SelectedItem = null;
                     break;
                 case "logout":
-                    // Maybe add a confirmation dialog or flyout
                     Logout();
                     break;
             }

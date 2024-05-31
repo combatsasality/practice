@@ -16,6 +16,11 @@ namespace DocumentWorker
             DataContext = this;
         }
 
+        /// <summary>
+        /// Redirect to login page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             Authorization parentWindow = (Authorization)Window.GetWindow(this);

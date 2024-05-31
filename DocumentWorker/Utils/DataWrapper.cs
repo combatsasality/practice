@@ -61,7 +61,10 @@ namespace DocumentWorker.Utils
         }
     }
 
-
+    /// <summary>
+    /// Class Response
+    /// Represents a response from the void methods
+    /// </summary>
     public class Response
     {
         public string message;

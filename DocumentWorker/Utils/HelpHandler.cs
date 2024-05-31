@@ -25,6 +25,11 @@ namespace DocumentWorker.Utils
             Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
             WriteIndented = true
         };
+
+        /// <summary>
+        /// Method CreateAllStuff
+        /// Helper method to create all necessary directories and files
+        /// </summary>
         public static void CreateAllStuff()
         {
             if (!Directory.Exists("data"))
@@ -42,6 +47,7 @@ namespace DocumentWorker.Utils
             }
         }
 
+
         public static string GetHashFromString(string str)
         {
             byte[] arrInput = SHA256.Create().ComputeHash(Encoding.ASCII.GetBytes(str));
@@ -54,6 +60,12 @@ namespace DocumentWorker.Utils
             return sOutput.ToString();
         }
 
+        /// <summary>
+        /// Method ChangeMergedDictionaries
+        /// Changes the language of the application
+        /// </summary>
+        /// <param name="pattern"></param>
+        /// <param name="newSource"></param>
         public static void ChangeMergedDictionaries(string pattern, string newSource)
         {
 
@@ -75,6 +87,7 @@ namespace DocumentWorker.Utils
                 Application.Current.Resources.MergedDictionaries.Add(dict);
             }
         }
+        
         public static ResourceDictionary GetLanguageDictionary()
         {
             return (
@@ -88,6 +101,9 @@ namespace DocumentWorker.Utils
             File.WriteAllBytes(@"data\documents\" + newName + Path.GetExtension(path), File.ReadAllBytes(path));
         }
 
+        /// <summary>
+        /// Checks the signature of the document
+        /// </summary>
         public static void CheckSignPath()
         {
             ResourceDictionary lang = GetLanguageDictionary();

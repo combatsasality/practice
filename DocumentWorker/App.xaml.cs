@@ -73,7 +73,10 @@ namespace DocumentWorker
         }
 
 
-
+        /// <summary>
+        /// Event handler for the Application Startup event, which is triggered when the application is started.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

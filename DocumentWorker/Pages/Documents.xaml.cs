@@ -132,7 +132,6 @@ namespace DocumentWorker.Pages
         }
         private void MenuItemSignClick_ToSignDocumentsDataGrid(object sender, RoutedEventArgs e)
         {
-            // Where are my java iterators T.T
             foreach (Document document in ToSignDocumentsDataGrid.SelectedItems)
             {
                 Document current = App.Data.Documents.Find(d => d.Id == document.Id);

@@ -223,7 +223,6 @@ namespace DocumentWorker.Utils.DataStructures
         }
         public void SignDocument(string privateKey)
         {
-            // TODO: rewrite this method
             using (RSA rsa = RSA.Create())
             {
                 rsa.FromXmlString(privateKey);
@@ -236,7 +235,6 @@ namespace DocumentWorker.Utils.DataStructures
         }
         public void GetSignAndDocument(string path)
         {
-            // TODO: rewrite this method
             File.WriteAllBytes(path + @"\" + NameInSystem + Extension, File.ReadAllBytes(@"data\documents\" + Name + Extension));
             File.WriteAllBytes(path + @"\" + NameInSystem + Extension + ".pem", File.ReadAllBytes(@"data\documents\" + Name + Extension + ".pem"));
         }
