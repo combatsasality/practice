@@ -39,7 +39,14 @@ namespace DocumentWorker
             Language = Settings.Default.Language;
             Theme = Settings.Default.Theme;
             HelpHandler.CreateAllStuff();
-            Data = JsonSerializer.Deserialize<DataWrapper>(File.ReadAllText(HelpHandler.PathData));
+            try
+            {
+                Data = JsonSerializer.Deserialize<DataWrapper>(File.ReadAllText(HelpHandler.PathData));
+            }
+            catch (System.Text.Json.JsonException)
+            {
+                Data = new DataWrapper();
+            }
 
         }
 

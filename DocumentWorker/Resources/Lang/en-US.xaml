@@ -74,4 +74,6 @@
     <v:String x:Key="unarchive_title">Unarchive operation</v:String>
     <v:String x:Key="button_cancel">Cancel</v:String>
     <v:String x:Key="label_unarchive_operation">To unarchive a document you need to specify the time when you want to sign the document and a new signer</v:String>
+    <v:String x:Key="adddocument_document_locker">The file is busy with another process. Close the file and try again.</v:String>
+
 </ResourceDictionary>

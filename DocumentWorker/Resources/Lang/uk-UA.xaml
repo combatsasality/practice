@@ -74,4 +74,6 @@
     <v:String x:Key="unarchive_title">Операція розархівування</v:String>
     <v:String x:Key="button_cancel">Скасувати</v:String>
     <v:String x:Key="label_unarchive_operation">Щоб розархівувати документ, потрібно вказати час, коли ви хочете підписати документ, і нового підписанта</v:String>
+    <v:String x:Key="adddocument_document_locker">Файл зайнятий іншим процесом. Закрийте файл і повторіть спробу.</v:String>
+
 </ResourceDictionary>

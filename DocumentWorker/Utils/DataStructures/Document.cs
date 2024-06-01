@@ -194,7 +194,7 @@ namespace DocumentWorker.Utils.DataStructures
                 if (_isArchived == null)
                 {
                     _isArchived = value;
-                } else if (_signedBefore != null)
+                } else if (_isArchived != null)
                 {
                     _isArchived = value;
                     OnUpdate();

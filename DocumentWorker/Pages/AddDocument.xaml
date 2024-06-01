@@ -28,7 +28,7 @@
 
             <ui:SimpleStackPanel Grid.Column="1" x:Name="SecondPanel" Visibility="Hidden">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView x:Name="UserListView" SelectionMode="Single" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource DataGridHeightConverter}}" >
+                    <ListView x:Name="UserListView" SelectionMode="Single" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource DataGridHeightConverter}}" MinHeight="90" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100" />

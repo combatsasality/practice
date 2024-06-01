@@ -28,7 +28,14 @@ namespace DocumentWorker.Pages
             OpenFileDialog fileDialog = new OpenFileDialog();
             if (fileDialog.ShowDialog() == true)
             {
+                try { 
                 SelectedDocument = new StreamReader(fileDialog.FileName);
+                } catch (System.IO.IOException)
+                {
+                    ResourceDictionary resources = HelpHandler.GetLanguageDictionary();
+                    MessageBox.Show((string)resources["adddocument_document_locker"]);
+                    return;
+                }
                 FilePath = fileDialog.FileName;
                 ChangeVisibility(Visibility.Visible);
 
