@@ -19,21 +19,6 @@
             <TabItem Header="{DynamicResource documents_added_documents}">
                 <ui:SimpleStackPanel Margin="10,10,0,0">
                     <DataGrid x:Name="AddedDocumentsDataGrid" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}}"  >
-                        <!--<DataGrid.RowStyle>
-                            --><!--<Style TargetType="DataGridRow">
-                                <Setter Property="IsHitTestVisible" Value="False"/>
-                            </Style>-->
-                            <!--<Style TargetType="DataGridRow">
-                                <Setter Property="Background" Value="{x:Null}" />
-                                <Setter Property="BorderBrush" Value="{x:Null}" />
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="{x:Null}" />
-                                        <Setter Property="BorderBrush" Value="{x:Null}" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>--><!--
-                        </DataGrid.RowStyle>-->
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="{DynamicResource documents_header_name}" Binding="{Binding NameInSystem}" />
                             <DataGridTextColumn Header="{DynamicResource documents_header_extension}" Binding="{Binding Extension}" />

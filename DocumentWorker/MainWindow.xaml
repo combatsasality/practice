@@ -10,7 +10,6 @@
         Title="СУЕД" Height="450" Width="800"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True">
-    <!--PaneDisplayMode="Auto"-->
     <ui:NavigationView x:Name="Menu" PaneDisplayMode="Left" IsPaneOpen="False" IsBackButtonVisible="Collapsed" OpenPaneLength="185" SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
         <ui:NavigationView.PaneTitle>
             <DynamicResource ResourceKey="menu_header" />
