@@ -32,13 +32,7 @@ namespace DocumentWorker.Pages
         {
             foreach (Document document in ArchivedDocumentsDataGrid.SelectedItems)
             {
-                new Process
-                {
-                    StartInfo = new ProcessStartInfo(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", document.Name, document.Extension)))
-                    {
-                        UseShellExecute = true
-                    }
-                }.Start();
+                document.PreviewDocument();
             }
         }
         private void MenuGetDocumentClick_ArchivedDocumentsDataGrid(object sender, RoutedEventArgs e)
@@ -94,13 +88,8 @@ namespace DocumentWorker.Pages
         {
             foreach (Document document in AddedDocumentsDataGrid.SelectedItems)
             {
-                new Process
-                {
-                    StartInfo = new ProcessStartInfo(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", document.Name, document.Extension)))
-                    {
-                        UseShellExecute = true
-                    }
-                }.Start();
+
+                document.PreviewDocument();
             }
         }
         private void MenuGetDocumentClick_AddedDocumentsDataGrid(object sender, RoutedEventArgs e)
@@ -121,13 +110,7 @@ namespace DocumentWorker.Pages
         {
             foreach (Document document in ToSignDocumentsDataGrid.SelectedItems)
             {
-                new Process
-                {
-                    StartInfo = new ProcessStartInfo(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", document.Name, document.Extension)))
-                    {
-                        UseShellExecute = true
-                    }
-                }.Start();
+                document.PreviewDocument();
             }
         }
         private void MenuItemSignClick_ToSignDocumentsDataGrid(object sender, RoutedEventArgs e)
@@ -158,6 +141,27 @@ namespace DocumentWorker.Pages
                     if (document.IsSigned) document.GetSignAndDocument(dialog.FileName);
                 }
 
+            }
+        }
+        private void ShowInFolder_ToSignDocumentsDataGrid(object sender, RoutedEventArgs e)
+        {
+            foreach (Document document in ToSignDocumentsDataGrid.SelectedItems)
+            {
+                document.ShowInFolder();
+            }
+        }
+        private void ShowInFolder_ArchivedDocumentsDataGrid(object sender, RoutedEventArgs e)
+        {
+            foreach (Document document in ArchivedDocumentsDataGrid.SelectedItems)
+            {
+                document.ShowInFolder();
+            }
+        }
+        private void ShowInFolder_AddedDocumentsDataGrid(object sender, RoutedEventArgs e)
+        {
+            foreach (Document document in AddedDocumentsDataGrid.SelectedItems)
+            {
+                document.ShowInFolder();
             }
         }
     }

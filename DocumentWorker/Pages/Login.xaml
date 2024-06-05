@@ -30,7 +30,7 @@
         </ui:SimpleStackPanel>
         <TextBox x:Name="LoginTextBox" Margin="50,0,50,0"  ui:ControlHelper.PlaceholderText="{DynamicResource login_username}"/>
         <PasswordBox x:Name="PasswordTextBox" Margin="50,30,50,30"  ui:ControlHelper.PlaceholderText="{DynamicResource login_password}" />
-        <Button Click="Button_Click" Margin="0,80,0,10" HorizontalAlignment="Center" Content="{DynamicResource login_button_text}" MinWidth="180" MinHeight="40" />
+        <Button Click="Button_Click" Margin="0,80,0,10" IsDefault="True" HorizontalAlignment="Center" Content="{DynamicResource login_button_text}" MinWidth="180" MinHeight="40" />
         <TextBlock  HorizontalAlignment="Center">
                <Run Text="{DynamicResource login_no_account_0}"/>
                <Hyperlink Click="Hyperlink_Click"><Run Text="{DynamicResource login_no_account_1}" /></Hyperlink>

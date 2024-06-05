@@ -19,7 +19,8 @@ namespace DocumentWorker.Utils
     /// </summary>
     public static class HelpHandler
     {
-        public static string PathData = @"data/data.json";
+        public static string PathData = @"data\data.json";
+        public static string TempDocumentPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\TempDocuments";
         public static JsonSerializerOptions optionsSerializer = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
@@ -41,9 +42,16 @@ namespace DocumentWorker.Utils
             {
                 File.WriteAllText(PathData, jsonString);
             }
-            if (!Directory.Exists(@"data/documents"))
+            if (!Directory.Exists(@"data\documents"))
             {
-                Directory.CreateDirectory(@"data/documents/");
+                Directory.CreateDirectory(@"data\documents\");
+            }
+            if (!Directory.Exists(TempDocumentPath))
+            {
+                Directory.CreateDirectory(TempDocumentPath);
+            } else
+            {
+                ClearDirectory(TempDocumentPath);
             }
         }
 
@@ -99,6 +107,7 @@ namespace DocumentWorker.Utils
         public static void SaveFile(string path, string newName)
         {
             File.WriteAllBytes(@"data\documents\" + newName + Path.GetExtension(path), File.ReadAllBytes(path));
+            File.SetAttributes(@"data\documents\" + newName + Path.GetExtension(path), FileAttributes.ReadOnly);
         }
 
         /// <summary>
@@ -163,6 +172,27 @@ namespace DocumentWorker.Utils
             }
 
             MessageBox.Show((string)lang["checksign_sign_not_correct"]);
+        }
+
+        public static void ClearDirectory(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                string[] files = Directory.GetFiles(path);
+
+                foreach (string file in files)
+                {
+                    FileInfo fileInfo = new FileInfo(file);
+                    fileInfo.IsReadOnly = false;
+                    File.Delete(file);
+                }
+
+                string[] subdirectories = Directory.GetDirectories(path);
+                foreach (string subdirectory in subdirectories)
+                {
+                    Directory.Delete(subdirectory, true);
+                }
+            }
         }
     }
 }

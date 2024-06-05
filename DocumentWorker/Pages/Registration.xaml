@@ -28,7 +28,7 @@
         <TextBox x:Name="EmailTextBox" Margin="50,0,50,15" ui:ControlHelper.PlaceholderText="{DynamicResource register_email}" />
         <PasswordBox x:Name="PasswordTextBox" Margin="50,0,50,15" ui:ControlHelper.PlaceholderText="{DynamicResource login_password}" />
         <PasswordBox x:Name="ConfirmPasswordTextBox" Margin="50,0,50,33" ui:ControlHelper.PlaceholderText="{DynamicResource register_confirm_password}" />
-        <Button Click="Button_Click" Margin="0,30,0,10" HorizontalAlignment="Center" Content="{DynamicResource register_button_text}" MinWidth="180" MinHeight="40" />
+        <Button Click="Button_Click" Margin="0,30,0,10" HorizontalAlignment="Center" IsDefault="True" Content="{DynamicResource register_button_text}" MinWidth="180" MinHeight="40" />
         <TextBlock HorizontalAlignment="Center">
                <Run Text="{DynamicResource register_have_account_0}"/>
                <Hyperlink Click="Hyperlink_Click"><Run Text="{DynamicResource register_have_account_1}" /></Hyperlink>

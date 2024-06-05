@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text.Json.Serialization;
 
 namespace DocumentWorker.Utils.DataStructures
 {
@@ -202,6 +204,24 @@ namespace DocumentWorker.Utils.DataStructures
             }
         }
 
+        [JsonIgnore]
+        private string _pathToFile
+        {
+            get { return @"data\documents\" + Name + Extension; }
+        }
+        [JsonIgnore]
+        private string _pathToSign
+        {
+            get { return @"data\documents\" + Name + Extension + ".pem"; }
+        }
+
+        [JsonIgnore]
+        private string _previewName
+        {
+            get { return HelpHandler.TempDocumentPath + $@"\{OriginalName}_{Id.ToString().Split('-')[0]}{Extension}"; }
+        }
+
+
         public Document(string pathToFile, Guid ownerUuid, List<Guid> whoCanSign, string nameInSystem, DateTime? signedBefore)
         {
             _id = Guid.NewGuid();
@@ -219,25 +239,65 @@ namespace DocumentWorker.Utils.DataStructures
         }
         public void Delete()
         {
-            File.Delete(Path.GetFullPath(string.Format(@"data/documents/{0}{1}", Name, Extension)));
+            File.Delete(Path.GetFullPath(_pathToFile));
         }
         public void SignDocument(string privateKey)
         {
             using (RSA rsa = RSA.Create())
             {
                 rsa.FromXmlString(privateKey);
-                byte[] fileContent = File.ReadAllBytes(@"data\documents\" + Name + Extension);
+                byte[] fileContent = File.ReadAllBytes(_pathToFile);
                 byte[] hashBytes = SHA256.Create().ComputeHash(fileContent);
                 byte[] signature = rsa.SignHash(hashBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
-                File.WriteAllBytes(@"data\documents\" + Name + Extension + ".pem", signature);
+                File.WriteAllBytes(_pathToSign, signature);
             }
             OnUpdate();
         }
         public void GetSignAndDocument(string path)
         {
-            File.WriteAllBytes(path + @"\" + NameInSystem + Extension, File.ReadAllBytes(@"data\documents\" + Name + Extension));
-            File.WriteAllBytes(path + @"\" + NameInSystem + Extension + ".pem", File.ReadAllBytes(@"data\documents\" + Name + Extension + ".pem"));
+            File.WriteAllBytes(path + @"\" + NameInSystem + Extension, File.ReadAllBytes(_pathToFile));
+            File.WriteAllBytes(path + @"\" + NameInSystem + Extension + ".pem", File.ReadAllBytes(_pathToSign));
         }
+
+        public void PreviewDocument()
+        {
+            CreatePreview();
+            new Process
+            {
+                StartInfo = new ProcessStartInfo(_previewName)
+                {
+                    UseShellExecute = true
+                }
+            }.Start();
+        }
+
+        public void ShowInFolder()
+        {
+            CreatePreview();
+            new Process
+            {
+                StartInfo = new ProcessStartInfo("explorer.exe", HelpHandler.TempDocumentPath)
+                {
+                    UseShellExecute = true
+                }
+            }.Start();
+
+        }
+
+        public void CreatePreview()
+        {
+            try
+            {
+                File.Copy(_pathToFile, _previewName);
+            } catch (IOException)
+            {
+                FileInfo previewFile = new FileInfo(_previewName);
+                previewFile.IsReadOnly = false;
+                File.Delete(_previewName);
+                File.Copy(_pathToFile, _previewName);
+            }
+        }
+
         public void OnUpdate()
         {
             Guid id = Id;

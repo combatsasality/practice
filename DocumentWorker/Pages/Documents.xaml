@@ -40,6 +40,11 @@
                                         <ui:SymbolIcon Symbol="Download"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_show_in_folder}" Click="ShowInFolder_AddedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Folder"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
                                 <Separator />
                                 <MenuItem Header="{DynamicResource documents_context_archive}" Click="MenuItemArchiveClick_AddedDocumentsDataGrid">
                                     <MenuItem.Icon>
@@ -75,6 +80,11 @@
                                         <ui:SymbolIcon Symbol="Download"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_show_in_folder}" Click="ShowInFolder_ToSignDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Folder"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
                                 <Separator />
                                 <MenuItem Header="{DynamicResource documents_context_sign_document}" Click="MenuItemSignClick_ToSignDocumentsDataGrid">
                                     <MenuItem.Icon>
@@ -101,6 +111,11 @@
                                 <MenuItem Header="{DynamicResource documents_context_view_document}" Click="MenuItemPreviewClick_ArchivedDocumentsDataGrid">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon Symbol="Preview"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource documents_context_show_in_folder}" Click="ShowInFolder_ArchivedDocumentsDataGrid">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon Symbol="Folder"/>
                                     </MenuItem.Icon>
                                 </MenuItem>
                                 <MenuItem Header="{DynamicResource documents_context_get_document}" Click="MenuGetDocumentClick_ArchivedDocumentsDataGrid">

@@ -56,6 +56,7 @@
     <v:String x:Key="documents_context_delete_document">Delete documents</v:String>
     <v:String x:Key="documents_context_sign_document">Sign documents</v:String>
     <v:String x:Key="documents_context_get_document">Get documents</v:String>
+    <v:String x:Key="documents_context_show_in_folder">Show in folder</v:String>
     <v:String x:Key="home_about_app_header">About the app</v:String>
     <v:String x:Key="home_about_app">It is an integrated system for automating the management of electronic document flow at enterprises, which allows you to optimize the process of processing incoming and outgoing documents. The system includes tracking the status of documents, meeting processing deadlines, storing an archive of documents with advanced filtering, sorting, and categorization capabilities. The functionality of applying and verifying an electronic digital signature (EDS) ensures a high level of document management security. The access control system allows you to effectively manage user rights, restricting access to confidential information.</v:String>
     <v:String x:Key="home_technology_header">Technologies used in the application</v:String>

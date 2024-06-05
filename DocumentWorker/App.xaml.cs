@@ -97,6 +97,10 @@ namespace DocumentWorker
         private void App_Exit(object sender, ExitEventArgs e)
         {
             Data.Save();
+            if (Directory.Exists(HelpHandler.TempDocumentPath))
+            {
+                HelpHandler.ClearDirectory(HelpHandler.TempDocumentPath);
+            }
         }
     }
 }
