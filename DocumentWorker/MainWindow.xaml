@@ -10,6 +10,7 @@
         Title="СУЕД" Height="450" Width="800"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         MinHeight="400"
+        MinWidth="400"
         
         ui:WindowHelper.UseModernWindowStyle="True">
     <ui:NavigationView x:Name="Menu" PaneDisplayMode="Left" IsPaneOpen="False" IsBackButtonVisible="Collapsed" OpenPaneLength="185" SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
