@@ -100,6 +100,7 @@ namespace DocumentWorker
             if (Directory.Exists(HelpHandler.TempDocumentPath))
             {
                 HelpHandler.ClearDirectory(HelpHandler.TempDocumentPath);
+                Directory.Delete(HelpHandler.TempDocumentPath);
             }
         }
     }
